@@ -4,6 +4,7 @@ import android.Manifest
 import android.content.Context
 import android.content.pm.PackageManager
 import android.widget.Toast
+import androidx.activity.compose.BackHandler
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.clickable
@@ -29,6 +30,7 @@ import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableLongStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -40,10 +42,16 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleEventObserver
+import androidx.lifecycle.LifecycleOwner
 import com.example.grupo_5_biosur.media.GrabadorAudio
 import com.example.grupo_5_biosur.media.horaActual
+import com.example.grupo_5_biosur.model.Carpeta
 import com.example.grupo_5_biosur.model.Entry
 import com.example.grupo_5_biosur.model.Repositorio
+import com.example.grupo_5_biosur.model.claveDeHoy
+import com.example.grupo_5_biosur.model.fechaLarga
 import kotlinx.coroutines.delay
 
 private fun avisar(contexto: Context, mensaje: String) {
@@ -53,13 +61,22 @@ private fun avisar(contexto: Context, mensaje: String) {
 private fun tienePermiso(contexto: Context, permiso: String): Boolean =
     ContextCompat.checkSelfPermission(contexto, permiso) == PackageManager.PERMISSION_GRANTED
 
+private enum class Pantalla { CARPETA, HISTORIAL }
+
 @Composable
-fun AdeliaApp() {
+fun AdeliaApp(carpetaInicialId: Long) {
     val contexto = LocalContext.current
     var camaraAbierta by rememberSaveable { mutableStateOf(false) }
     var grabando by remember { mutableStateOf(false) }
     var segundos by remember { mutableIntStateOf(0) }
     val grabador = remember { GrabadorAudio(contexto) }
+
+    // Carpeta (día) que se está viendo y carpeta de hoy
+    var carpetaAbiertaId by remember { mutableLongStateOf(carpetaInicialId) }
+    var idHoy by remember { mutableLongStateOf(carpetaInicialId) }
+    var pantalla by remember { mutableStateOf(Pantalla.CARPETA) }
+    var mostrarRenombrar by remember { mutableStateOf(false) }
+    var nombreEditado by remember { mutableStateOf("") }
 
     // Suceso al que se está adjuntando algo (null = se crea un suceso nuevo)
     var destino by remember { mutableStateOf<Long?>(null) }
@@ -67,6 +84,26 @@ fun AdeliaApp() {
     var sucesoElegido by remember { mutableStateOf<Long?>(null) }
     var mostrarNota by remember { mutableStateOf(false) }
     var textoNota by rememberSaveable { mutableStateOf("") }
+
+    // Al volver a la app, crea la carpeta de hoy si cambió el día
+    val duenoCicloVida = contexto as LifecycleOwner
+    DisposableEffect(duenoCicloVida) {
+        val observador = LifecycleEventObserver { _, evento ->
+            if (evento == Lifecycle.Event.ON_RESUME) {
+                val hoy = Repositorio.asegurarCarpetaDeHoy()
+                if (hoy != idHoy) {
+                    if (carpetaAbiertaId == idHoy) carpetaAbiertaId = hoy
+                    idHoy = hoy
+                }
+            }
+        }
+        duenoCicloVida.lifecycle.addObserver(observador)
+        onDispose { duenoCicloVida.lifecycle.removeObserver(observador) }
+    }
+
+    BackHandler(enabled = pantalla == Pantalla.HISTORIAL && !camaraAbierta) {
+        pantalla = Pantalla.CARPETA
+    }
 
     // Si la app se cierra a mitad de una grabación, la descarta
     DisposableEffect(Unit) {
@@ -85,7 +122,8 @@ fun AdeliaApp() {
     /** Guarda la entrada: como adjunto del suceso elegido o como suceso nuevo. */
     fun agregar(entrada: Entry) {
         val id = destino
-        if (id == null) Repositorio.nuevoSuceso(entrada) else Repositorio.adjuntar(id, entrada)
+        if (id == null) Repositorio.nuevoSuceso(carpetaAbiertaId, entrada)
+        else Repositorio.adjuntar(carpetaAbiertaId, id, entrada)
         destino = null
     }
 
@@ -136,6 +174,10 @@ fun AdeliaApp() {
         destino = null
     }
 
+    val carpeta: Carpeta = Repositorio.carpetas.firstOrNull { it.id == carpetaAbiertaId }
+        ?: Repositorio.carpetas.lastOrNull()
+        ?: Carpeta(0L, claveDeHoy(), "Nombre de carpeta")
+
     if (camaraAbierta) {
         CamaraScreen(
             onFotoTomada = { ruta ->
@@ -147,11 +189,30 @@ fun AdeliaApp() {
                 destino = null
             }
         )
+    } else if (pantalla == Pantalla.HISTORIAL) {
+        HistorialScreen(
+            carpetas = Repositorio.carpetas,
+            idHoy = idHoy,
+            onAbrir = { id ->
+                carpetaAbiertaId = id
+                pantalla = Pantalla.CARPETA
+            },
+            onVolver = { pantalla = Pantalla.CARPETA }
+        )
     } else {
         FolderScreen(
-            nombre = "Nombre de carpeta",
-            sucesos = Repositorio.sucesos,
+            nombre = carpeta.nombre,
+            fecha = fechaLarga(carpeta.fecha),
+            sucesos = carpeta.sucesos,
             onSucesoClick = { id -> sucesoElegido = id },
+            onRenombrar = {
+                nombreEditado = carpeta.nombre
+                mostrarRenombrar = true
+            },
+            onHistorial = {
+                // No se cambia de día mientras hay una grabación en curso
+                if (!grabando) pantalla = Pantalla.HISTORIAL
+            },
             grabando = grabando,
             segundosGrabando = segundos,
             onMicrofono = {
@@ -180,6 +241,32 @@ fun AdeliaApp() {
                 grabador.cancelar()
                 grabando = false
                 destino = null
+            }
+        )
+    }
+
+    // Cuadro para cambiar el nombre de la carpeta
+    if (mostrarRenombrar) {
+        AlertDialog(
+            onDismissRequest = { mostrarRenombrar = false },
+            title = { Text("Nombre de la carpeta") },
+            text = {
+                OutlinedTextField(
+                    value = nombreEditado,
+                    onValueChange = { nombreEditado = it },
+                    singleLine = true,
+                    modifier = Modifier.fillMaxWidth()
+                )
+            },
+            confirmButton = {
+                TextButton(onClick = {
+                    val nuevo = nombreEditado.trim()
+                    if (nuevo.isNotEmpty()) Repositorio.renombrar(carpeta.id, nuevo)
+                    mostrarRenombrar = false
+                }) { Text("Guardar") }
+            },
+            dismissButton = {
+                TextButton(onClick = { mostrarRenombrar = false }) { Text("Cancelar") }
             }
         )
     }

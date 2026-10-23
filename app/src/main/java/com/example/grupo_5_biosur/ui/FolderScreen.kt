@@ -27,6 +27,8 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
+import androidx.compose.material.icons.filled.Edit
+import androidx.compose.material.icons.filled.History
 import androidx.compose.material.icons.filled.Stop
 import androidx.compose.material3.FabPosition
 import androidx.compose.material3.FloatingActionButton
@@ -60,8 +62,11 @@ import kotlinx.coroutines.withContext
 @Composable
 fun FolderScreen(
     nombre: String,
+    fecha: String,
     sucesos: List<Suceso>,
     onSucesoClick: (Long) -> Unit,
+    onRenombrar: () -> Unit,
+    onHistorial: () -> Unit,
     grabando: Boolean,
     segundosGrabando: Int,
     onMicrofono: () -> Unit,
@@ -109,7 +114,36 @@ fun FolderScreen(
             verticalArrangement = Arrangement.spacedBy(24.dp)
         ) {
             item {
-                Text(nombre, style = MaterialTheme.typography.titleLarge)
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Column(
+                        modifier = Modifier
+                            .weight(1f)
+                            .clickable(onClick = onRenombrar)
+                    ) {
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            Text(
+                                text = nombre,
+                                style = MaterialTheme.typography.titleLarge,
+                                modifier = Modifier.weight(1f, fill = false)
+                            )
+                            Icon(
+                                Icons.Default.Edit,
+                                contentDescription = "Cambiar nombre de la carpeta",
+                                tint = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.6f),
+                                modifier = Modifier
+                                    .padding(start = 8.dp)
+                                    .size(18.dp)
+                            )
+                        }
+                        Text(fecha, style = MaterialTheme.typography.bodyMedium)
+                    }
+                    IconButton(onClick = onHistorial) {
+                        Icon(Icons.Default.History, contentDescription = "Historial de días")
+                    }
+                }
             }
             if (sucesos.isEmpty()) {
                 item {
@@ -154,8 +188,22 @@ fun SucesoCard(
         }
 
         if (suceso.adjuntos.isNotEmpty()) {
-            Column(
-                modifier = Modifier
+            // En un suceso de la derecha, la línea y los adjuntos quedan a la derecha
+            val modificadorCadena = if (derecha) {
+                Modifier
+                    .fillMaxWidth()
+                    .padding(end = 14.dp)
+                    .drawBehind {
+                        drawLine(
+                            color = colorLinea,
+                            start = Offset(size.width, 0f),
+                            end = Offset(size.width, size.height),
+                            strokeWidth = 2.dp.toPx()
+                        )
+                    }
+                    .padding(end = 16.dp)
+            } else {
+                Modifier
                     .padding(start = 14.dp)
                     .drawBehind {
                         drawLine(
@@ -166,6 +214,11 @@ fun SucesoCard(
                         )
                     }
                     .padding(start = 16.dp)
+            }
+
+            Column(
+                modifier = modificadorCadena,
+                horizontalAlignment = if (derecha) Alignment.End else Alignment.Start
             ) {
                 suceso.adjuntos.forEach { adjunto ->
                     EntryCard(
@@ -174,15 +227,17 @@ fun SucesoCard(
                             .padding(top = 12.dp)
                             .drawBehind {
                                 // Punto y tramo que conectan el adjunto con la línea
+                                val centroX = if (derecha) size.width + 16.dp.toPx() else (-16).dp.toPx()
+                                val bordeX = if (derecha) size.width else 0f
                                 drawCircle(
                                     color = colorLinea,
                                     radius = 5.dp.toPx(),
-                                    center = Offset((-16).dp.toPx(), 9.dp.toPx())
+                                    center = Offset(centroX, 9.dp.toPx())
                                 )
                                 drawLine(
                                     color = colorLinea,
-                                    start = Offset((-16).dp.toPx(), 9.dp.toPx()),
-                                    end = Offset(0f, 9.dp.toPx()),
+                                    start = Offset(centroX, 9.dp.toPx()),
+                                    end = Offset(bordeX, 9.dp.toPx()),
                                     strokeWidth = 2.dp.toPx()
                                 )
                             }
@@ -324,8 +379,11 @@ fun FolderScreenPreview() {
     Grupo_5_biosurTheme {
         FolderScreen(
             nombre = "Nombre de carpeta",
+            fecha = "Jueves 22 de octubre de 2026",
             sucesos = sucesosDeEjemplo,
             onSucesoClick = {},
+            onRenombrar = {},
+            onHistorial = {},
             grabando = false,
             segundosGrabando = 0,
             onMicrofono = {},

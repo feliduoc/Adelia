@@ -16,6 +16,14 @@ data class Suceso(
     val adjuntos: List<Entry> = emptyList()
 )
 
+/** La carpeta de un día de obra: tiene nombre, fecha y los sucesos registrados ese día. */
+data class Carpeta(
+    val id: Long,
+    val fecha: String, // "yyyy-MM-dd"
+    val nombre: String,
+    val sucesos: List<Suceso> = emptyList()
+)
+
 // Solo se usa en las previsualizaciones de Android Studio
 val sucesosDeEjemplo = listOf(
     Suceso(
