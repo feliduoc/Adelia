@@ -33,7 +33,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.delay
 
-/** Barra celeste con play/pausa y progreso para reproducir una nota de voz. */
+/** Barra de reproducción de audio con controles y barra de progreso. */
 @Composable
 fun AudioBar(ruta: String, modifier: Modifier = Modifier) {
     val contexto = LocalContext.current
@@ -46,7 +46,6 @@ fun AudioBar(ruta: String, modifier: Modifier = Modifier) {
         onDispose { reproductor.release() }
     }
 
-    // Actualiza la barra de progreso mientras suena el audio
     LaunchedEffect(reproduciendo) {
         while (reproduciendo) {
             val duracion = reproductor.duration
@@ -55,7 +54,7 @@ fun AudioBar(ruta: String, modifier: Modifier = Modifier) {
         }
     }
 
-    fun alternar() {
+    fun alternarReproduccion() {
         if (reproduciendo) {
             reproductor.pause()
             reproduciendo = false
@@ -73,7 +72,7 @@ fun AudioBar(ruta: String, modifier: Modifier = Modifier) {
             }
             reproductor.start()
             reproduciendo = true
-        } catch (e: Exception) {
+        } catch (_: Exception) {
             Toast.makeText(contexto, "No se pudo reproducir el audio", Toast.LENGTH_SHORT).show()
         }
     }
@@ -93,7 +92,7 @@ fun AudioBar(ruta: String, modifier: Modifier = Modifier) {
             tint = Color.White,
             modifier = Modifier
                 .size(28.dp)
-                .clickable { alternar() }
+                .clickable { alternarReproduccion() }
         )
         Box(
             modifier = Modifier

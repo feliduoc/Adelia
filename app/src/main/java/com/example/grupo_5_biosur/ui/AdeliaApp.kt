@@ -7,21 +7,15 @@ import android.widget.Toast
 import androidx.activity.compose.BackHandler
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
+import androidx.compose.animation.AnimatedContent
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.slideInHorizontally
+import androidx.compose.animation.slideOutHorizontally
+import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.CameraAlt
-import androidx.compose.material.icons.filled.Keyboard
-import androidx.compose.material.icons.filled.Mic
 import androidx.compose.material3.AlertDialog
-import androidx.compose.material3.Icon
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -35,12 +29,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
@@ -71,21 +61,16 @@ fun AdeliaApp(carpetaInicialId: Long) {
     var segundos by remember { mutableIntStateOf(0) }
     val grabador = remember { GrabadorAudio(contexto) }
 
-    // Carpeta (día) que se está viendo y carpeta de hoy
     var carpetaAbiertaId by remember { mutableLongStateOf(carpetaInicialId) }
     var idHoy by remember { mutableLongStateOf(carpetaInicialId) }
     var pantalla by remember { mutableStateOf(Pantalla.CARPETA) }
     var mostrarRenombrar by remember { mutableStateOf(false) }
     var nombreEditado by remember { mutableStateOf("") }
 
-    // Suceso al que se está adjuntando algo (null = se crea un suceso nuevo)
     var destino by remember { mutableStateOf<Long?>(null) }
-    // Suceso tocado, mientras se muestra el menú de adjuntar
-    var sucesoElegido by remember { mutableStateOf<Long?>(null) }
     var mostrarNota by remember { mutableStateOf(false) }
     var textoNota by rememberSaveable { mutableStateOf("") }
 
-    // Al volver a la app, crea la carpeta de hoy si cambió el día
     val duenoCicloVida = contexto as LifecycleOwner
     DisposableEffect(duenoCicloVida) {
         val observador = LifecycleEventObserver { _, evento ->
@@ -105,12 +90,10 @@ fun AdeliaApp(carpetaInicialId: Long) {
         pantalla = Pantalla.CARPETA
     }
 
-    // Si la app se cierra a mitad de una grabación, la descarta
     DisposableEffect(Unit) {
         onDispose { grabador.cancelar() }
     }
 
-    // Cuenta los segundos mientras se graba
     LaunchedEffect(grabando) {
         segundos = 0
         while (grabando) {
@@ -119,7 +102,6 @@ fun AdeliaApp(carpetaInicialId: Long) {
         }
     }
 
-    /** Guarda la entrada: como adjunto del suceso elegido o como suceso nuevo. */
     fun agregar(entrada: Entry) {
         val id = destino
         if (id == null) Repositorio.nuevoSuceso(carpetaAbiertaId, entrada)
@@ -128,9 +110,8 @@ fun AdeliaApp(carpetaInicialId: Long) {
     }
 
     fun empezarGrabacion() {
-        if (grabador.iniciar()) {
-            grabando = true
-        } else {
+        if (grabador.iniciar()) grabando = true
+        else {
             destino = null
             avisar(contexto, "No se pudo iniciar la grabación")
         }
@@ -139,9 +120,8 @@ fun AdeliaApp(carpetaInicialId: Long) {
     val permisoCamara = rememberLauncherForActivityResult(
         ActivityResultContracts.RequestPermission()
     ) { concedido ->
-        if (concedido) {
-            camaraAbierta = true
-        } else {
+        if (concedido) camaraAbierta = true
+        else {
             destino = null
             avisar(contexto, "Se necesita el permiso de cámara para tomar fotos")
         }
@@ -150,9 +130,8 @@ fun AdeliaApp(carpetaInicialId: Long) {
     val permisoAudio = rememberLauncherForActivityResult(
         ActivityResultContracts.RequestPermission()
     ) { concedido ->
-        if (concedido) {
-            empezarGrabacion()
-        } else {
+        if (concedido) empezarGrabacion()
+        else {
             destino = null
             avisar(contexto, "Se necesita el permiso de micrófono para grabar")
         }
@@ -181,7 +160,8 @@ fun AdeliaApp(carpetaInicialId: Long) {
     if (camaraAbierta) {
         CamaraScreen(
             onFotoTomada = { ruta ->
-                agregar(Entry(id = System.currentTimeMillis(), hora = horaActual(), rutaFoto = ruta))
+                val (lat, lon) = Repositorio.obtenerGpsSimulado()
+                agregar(Entry(System.currentTimeMillis(), horaActual(), rutaFoto = ruta, latitud = lat, longitud = lon))
                 camaraAbierta = false
             },
             onCerrar = {
@@ -189,63 +169,61 @@ fun AdeliaApp(carpetaInicialId: Long) {
                 destino = null
             }
         )
-    } else if (pantalla == Pantalla.HISTORIAL) {
-        HistorialScreen(
-            carpetas = Repositorio.carpetas,
-            idHoy = idHoy,
-            onAbrir = { id ->
-                carpetaAbiertaId = id
-                pantalla = Pantalla.CARPETA
-            },
-            onVolver = { pantalla = Pantalla.CARPETA }
-        )
     } else {
-        FolderScreen(
-            nombre = carpeta.nombre,
-            fecha = fechaLarga(carpeta.fecha),
-            sucesos = carpeta.sucesos,
-            onSucesoClick = { id -> sucesoElegido = id },
-            onRenombrar = {
-                nombreEditado = carpeta.nombre
-                mostrarRenombrar = true
-            },
-            onHistorial = {
-                // No se cambia de día mientras hay una grabación en curso
-                if (!grabando) pantalla = Pantalla.HISTORIAL
-            },
-            grabando = grabando,
-            segundosGrabando = segundos,
-            onMicrofono = {
-                destino = null
-                abrirMicrofono()
-            },
-            onCamara = {
-                destino = null
-                abrirCamara()
-            },
-            onTeclado = {
-                destino = null
-                mostrarNota = true
-            },
-            onDetenerGrabacion = {
-                val ruta = grabador.detener()
-                grabando = false
-                if (ruta != null) {
-                    agregar(Entry(id = System.currentTimeMillis(), hora = horaActual(), rutaAudio = ruta))
+        AnimatedContent(
+            targetState = pantalla,
+            transitionSpec = {
+                if (targetState == Pantalla.HISTORIAL) {
+                    slideInHorizontally(animationSpec = tween(250)) { -it } + fadeIn(animationSpec = tween(250)) togetherWith
+                            slideOutHorizontally(animationSpec = tween(250)) { it } + fadeOut(animationSpec = tween(250))
                 } else {
-                    destino = null
-                    avisar(contexto, "La grabación fue muy corta")
+                    slideInHorizontally(animationSpec = tween(250)) { it } + fadeIn(animationSpec = tween(250)) togetherWith
+                            slideOutHorizontally(animationSpec = tween(250)) { -it } + fadeOut(animationSpec = tween(250))
                 }
             },
-            onCancelarGrabacion = {
-                grabador.cancelar()
-                grabando = false
-                destino = null
+            label = "TransicionPantalla"
+        ) { pantallaObjetivo ->
+            if (pantallaObjetivo == Pantalla.HISTORIAL) {
+                HistorialScreen(
+                    carpetas = Repositorio.carpetas,
+                    idHoy = idHoy,
+                    onAbrir = { id ->
+                        carpetaAbiertaId = id
+                        pantalla = Pantalla.CARPETA
+                    },
+                    onVolver = { pantalla = Pantalla.CARPETA }
+                )
+            } else {
+                FolderScreen(
+                    nombre = carpeta.nombre,
+                    fecha = fechaLarga(carpeta.fecha),
+                    sucesos = carpeta.sucesos,
+                    onAnexarCamara = { id -> destino = id; abrirCamara() },
+                    onAnexarMicrofono = { id -> destino = id; abrirMicrofono() },
+                    onAnexarTeclado = { id -> destino = id; mostrarNota = true },
+                    onRenombrar = { nombreEditado = carpeta.nombre; mostrarRenombrar = true },
+                    onHistorial = { if (!grabando) pantalla = Pantalla.HISTORIAL },
+                    grabando = grabando,
+                    segundosGrabando = segundos,
+                    onMicrofono = { destino = null; abrirMicrofono() },
+                    onCamara = { destino = null; abrirCamara() },
+                    onTeclado = { destino = null; mostrarNota = true },
+                    onDetenerGrabacion = {
+                        val ruta = grabador.detener()
+                        grabando = false
+                        if (ruta != null) agregar(Entry(System.currentTimeMillis(), horaActual(), rutaAudio = ruta))
+                        else { destino = null; avisar(contexto, "La grabación fue muy corta") }
+                    },
+                    onCancelarGrabacion = {
+                        grabador.cancelar()
+                        grabando = false
+                        destino = null
+                    }
+                )
             }
-        )
+        }
     }
 
-    // Cuadro para cambiar el nombre de la carpeta
     if (mostrarRenombrar) {
         AlertDialog(
             onDismissRequest = { mostrarRenombrar = false },
@@ -271,13 +249,10 @@ fun AdeliaApp(carpetaInicialId: Long) {
         )
     }
 
-    // Cuadro para escribir una nota de texto
     if (mostrarNota) {
         AlertDialog(
             onDismissRequest = { cerrarNota() },
-            title = {
-                Text(if (destino == null) "Nueva nota de texto" else "Nota para este suceso")
-            },
+            title = { Text(if (destino == null) "Nueva nota de texto" else "Nota para este suceso") },
             text = {
                 OutlinedTextField(
                     value = textoNota,
@@ -289,9 +264,7 @@ fun AdeliaApp(carpetaInicialId: Long) {
             confirmButton = {
                 TextButton(onClick = {
                     val texto = textoNota.trim()
-                    if (texto.isNotEmpty()) {
-                        agregar(Entry(id = System.currentTimeMillis(), hora = horaActual(), texto = texto))
-                    }
+                    if (texto.isNotEmpty()) agregar(Entry(System.currentTimeMillis(), horaActual(), texto = texto))
                     cerrarNota()
                 }) { Text("Guardar") }
             },

@@ -48,40 +48,32 @@ fun CamaraScreen(
     modifier: Modifier = Modifier
 ) {
     val contexto = LocalContext.current
-    val duenoCicloVida = contexto as LifecycleOwner
+    val cicloVida = contexto as LifecycleOwner
     val capturaImagen = remember { ImageCapture.Builder().build() }
     val vistaPrevia = remember { PreviewView(contexto) }
     var tomandoFoto by remember { mutableStateOf(false) }
 
     BackHandler { onCerrar() }
 
-    // Enciende la cámara mientras esta pantalla está visible y la apaga al salir
-    DisposableEffect(duenoCicloVida) {
-        val futuro = ProcessCameraProvider.getInstance(contexto)
-        futuro.addListener({
+    DisposableEffect(cicloVida) {
+        val futuroProveedor = ProcessCameraProvider.getInstance(contexto)
+        val ejecutor = ContextCompat.getMainExecutor(contexto)
+        val escuchador = Runnable {
             try {
-                val proveedor = futuro.get()
-                val previa = Preview.Builder().build().also {
-                    it.setSurfaceProvider(vistaPrevia.surfaceProvider)
-                }
+                val proveedor = futuroProveedor.get()
+                val preview = Preview.Builder().build().also { it.setSurfaceProvider(vistaPrevia.surfaceProvider) }
                 proveedor.unbindAll()
-                proveedor.bindToLifecycle(
-                    duenoCicloVida,
-                    CameraSelector.DEFAULT_BACK_CAMERA,
-                    previa,
-                    capturaImagen
-                )
-            } catch (e: Exception) {
+                proveedor.bindToLifecycle(cicloVida, CameraSelector.DEFAULT_BACK_CAMERA, preview, capturaImagen)
+            } catch (_: Exception) {
                 Toast.makeText(contexto, "No se pudo abrir la cámara", Toast.LENGTH_SHORT).show()
             }
-        }, ContextCompat.getMainExecutor(contexto))
+        }
+        futuroProveedor.addListener(escuchador, ejecutor)
 
         onDispose {
             try {
-                if (futuro.isDone) futuro.get().unbindAll()
-            } catch (e: Exception) {
-                // nada que liberar
-            }
+                if (futuroProveedor.isDone) futuroProveedor.get().unbindAll()
+            } catch (_: Exception) {}
         }
     }
 
@@ -94,12 +86,11 @@ fun CamaraScreen(
             opciones,
             ContextCompat.getMainExecutor(contexto),
             object : ImageCapture.OnImageSavedCallback {
-                override fun onImageSaved(resultado: ImageCapture.OutputFileResults) {
+                override fun onImageSaved(res: ImageCapture.OutputFileResults) {
                     tomandoFoto = false
                     onFotoTomada(archivo.absolutePath)
                 }
-
-                override fun onError(error: ImageCaptureException) {
+                override fun onError(err: ImageCaptureException) {
                     tomandoFoto = false
                     Toast.makeText(contexto, "No se pudo guardar la foto", Toast.LENGTH_SHORT).show()
                 }
@@ -107,25 +98,16 @@ fun CamaraScreen(
         )
     }
 
-    Box(modifier = modifier
-        .fillMaxSize()
-        .background(Color.Black)) {
-        AndroidView(
-            factory = { vistaPrevia },
-            modifier = Modifier.fillMaxSize()
-        )
+    Box(modifier = modifier.fillMaxSize().background(Color.Black)) {
+        AndroidView(factory = { vistaPrevia }, modifier = Modifier.fillMaxSize())
 
         IconButton(
             onClick = onCerrar,
-            modifier = Modifier
-                .align(Alignment.TopStart)
-                .statusBarsPadding()
-                .padding(8.dp)
+            modifier = Modifier.align(Alignment.TopStart).statusBarsPadding().padding(8.dp)
         ) {
-            Icon(Icons.Default.Close, contentDescription = "Cerrar cámara", tint = Color.White)
+            Icon(Icons.Default.Close, contentDescription = "Cerrar", tint = Color.White)
         }
 
-        // Botón rojo de captura, con aro blanco
         Box(
             modifier = Modifier
                 .align(Alignment.BottomCenter)

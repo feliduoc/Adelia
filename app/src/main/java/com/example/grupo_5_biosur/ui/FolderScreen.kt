@@ -4,12 +4,29 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Matrix
 import android.media.ExifInterface
+import androidx.compose.animation.core.FastOutSlowInEasing
+import androidx.compose.animation.core.LinearEasing
+import androidx.compose.animation.core.RepeatMode
+import androidx.compose.animation.core.Spring
+import androidx.compose.animation.core.animateFloat
+import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.infiniteRepeatable
+import androidx.compose.animation.core.rememberInfiniteTransition
+import androidx.compose.animation.core.spring
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.scaleIn
+import androidx.compose.animation.scaleOut
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.gestures.awaitEachGesture
+import androidx.compose.foundation.gestures.awaitFirstDown
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -18,17 +35,23 @@ import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.CameraAlt
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Edit
-import androidx.compose.material.icons.filled.History
+import androidx.compose.material.icons.filled.Keyboard
+import androidx.compose.material.icons.filled.Menu
+import androidx.compose.material.icons.filled.Mic
+import androidx.compose.material.icons.filled.Place
 import androidx.compose.material.icons.filled.Stop
 import androidx.compose.material3.FabPosition
 import androidx.compose.material3.FloatingActionButton
@@ -40,7 +63,11 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.produceState
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -49,22 +76,33 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.graphics.asImageBitmap
+import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.input.pointer.positionChange
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.example.grupo_5_biosur.model.Entry
 import com.example.grupo_5_biosur.model.Suceso
 import com.example.grupo_5_biosur.model.sucesosDeEjemplo
 import com.example.grupo_5_biosur.ui.theme.Grupo_5_biosurTheme
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import kotlin.math.abs
 
 @Composable
 fun FolderScreen(
     nombre: String,
     fecha: String,
     sucesos: List<Suceso>,
-    onSucesoClick: (Long) -> Unit,
+    onAnexarCamara: (Long) -> Unit,
+    onAnexarMicrofono: (Long) -> Unit,
+    onAnexarTeclado: (Long) -> Unit,
     onRenombrar: () -> Unit,
     onHistorial: () -> Unit,
     grabando: Boolean,
@@ -118,6 +156,10 @@ fun FolderScreen(
                     modifier = Modifier.fillMaxWidth(),
                     verticalAlignment = Alignment.CenterVertically
                 ) {
+                    IconButton(onClick = onHistorial) {
+                        Icon(Icons.Default.Menu, contentDescription = "Menú / Historial de días")
+                    }
+                    Spacer(Modifier.width(8.dp))
                     Column(
                         modifier = Modifier
                             .weight(1f)
@@ -140,9 +182,6 @@ fun FolderScreen(
                         }
                         Text(fecha, style = MaterialTheme.typography.bodyMedium)
                     }
-                    IconButton(onClick = onHistorial) {
-                        Icon(Icons.Default.History, contentDescription = "Historial de días")
-                    }
                 }
             }
             if (sucesos.isEmpty()) {
@@ -157,63 +196,193 @@ fun FolderScreen(
                 SucesoCard(
                     suceso = suceso,
                     derecha = index % 2 == 1,
-                    onClick = { onSucesoClick(suceso.id) }
+                    onAnexarCamara = { onAnexarCamara(suceso.id) },
+                    onAnexarMicrofono = { onAnexarMicrofono(suceso.id) },
+                    onAnexarTeclado = { onAnexarTeclado(suceso.id) }
                 )
             }
         }
     }
 }
 
-/** Un suceso: la entrada principal y, debajo, sus adjuntos unidos por una línea. */
+private enum class OpcionCentrada { NINGUNA, CAMARA, MIC, TECLADO }
+
+/**
+ * Un suceso: mantiene su posición de diseño 100% inamovible (sin centrarse ni shift)
+ * y despliega las opciones centradas exactamente en las coordenadas de toque con la misma animación que el FAB.
+ */
 @Composable
 fun SucesoCard(
     suceso: Suceso,
     derecha: Boolean,
-    onClick: () -> Unit,
+    onAnexarCamara: () -> Unit,
+    onAnexarMicrofono: () -> Unit,
+    onAnexarTeclado: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     val colorLinea = MaterialTheme.colorScheme.primary
+    var menuActivo by remember { mutableStateOf(false) }
+    var origenTouch by remember { mutableStateOf(Offset.Zero) }
+    var opcionDestacada by remember { mutableStateOf(OpcionCentrada.NINGUNA) }
+    val scopeCorrutina = rememberCoroutineScope()
+    val contextoPx = LocalDensity.current
+    val umbralPx = with(contextoPx) { 24.dp.toPx() }
 
     Column(modifier.fillMaxWidth()) {
         Box(
             modifier = Modifier.fillMaxWidth(),
             contentAlignment = if (derecha) Alignment.TopEnd else Alignment.TopStart
         ) {
-            EntryCard(
-                entrada = suceso.principal,
+            Box(
                 modifier = Modifier
                     .fillMaxWidth(0.62f)
-                    .clickable(onClick = onClick)
-            )
+                    .pointerInput(Unit) {
+                        awaitEachGesture {
+                            val down = awaitFirstDown(requireUnconsumed = false)
+                            origenTouch = down.position
+                            var acumuladoX = 0f
+                            var acumuladoY = 0f
+                            var seleccionActual = OpcionCentrada.NINGUNA
+
+                            val temporizadorRetencion = scopeCorrutina.launch {
+                                delay(50)
+                                menuActivo = true
+                            }
+
+                            while (true) {
+                                val evento = awaitPointerEvent()
+                                val cambio = evento.changes.firstOrNull() ?: break
+
+                                if (cambio.pressed) {
+                                    val delta = cambio.positionChange()
+                                    acumuladoX += delta.x
+                                    acumuladoY += delta.y
+
+                                    val distanciaCuadrada = acumuladoX * acumuladoX + acumuladoY * acumuladoY
+                                    if (distanciaCuadrada > umbralPx * umbralPx) {
+                                        if (!menuActivo) menuActivo = true
+                                        seleccionActual = when {
+                                            abs(acumuladoY) > abs(acumuladoX) && acumuladoY < 0 -> OpcionCentrada.CAMARA
+                                            abs(acumuladoX) > abs(acumuladoY) && acumuladoX < 0 -> OpcionCentrada.MIC
+                                            abs(acumuladoX) > abs(acumuladoY) && acumuladoX > 0 -> OpcionCentrada.TECLADO
+                                            else -> OpcionCentrada.NINGUNA
+                                        }
+                                        opcionDestacada = seleccionActual
+                                    }
+                                    cambio.consume()
+                                } else {
+                                    temporizadorRetencion.cancel()
+                                    if (seleccionActual != OpcionCentrada.NINGUNA) {
+                                        when (seleccionActual) {
+                                            OpcionCentrada.CAMARA -> onAnexarCamara()
+                                            OpcionCentrada.MIC -> onAnexarMicrofono()
+                                            OpcionCentrada.TECLADO -> onAnexarTeclado()
+                                            else -> {}
+                                        }
+                                    }
+                                    menuActivo = false
+                                    opcionDestacada = OpcionCentrada.NINGUNA
+                                    break
+                                }
+                            }
+                        }
+                    }
+            ) {
+                EntryCard(entrada = suceso.principal)
+
+                // Superposición animada idéntica al FAB, sin mover la tarjeta y centrada exactamente en el toque
+                androidx.compose.animation.AnimatedVisibility(
+                    visible = menuActivo || opcionDestacada != OpcionCentrada.NINGUNA,
+                    enter = fadeIn(animationSpec = tween(150)),
+                    exit = fadeOut(animationSpec = tween(150)),
+                    modifier = Modifier.matchParentSize()
+                ) {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .background(Color.Black.copy(alpha = 0.15f), shape = RoundedCornerShape(8.dp)),
+                        contentAlignment = Alignment.TopStart
+                    ) {
+                        Box(
+                            modifier = Modifier
+                                .offset(
+                                    x = with(LocalDensity.current) { origenTouch.x.toDp() - 110.dp },
+                                    y = with(LocalDensity.current) { origenTouch.y.toDp() - 110.dp + 78.dp }
+                                )
+                                .size(220.dp),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            BotonOpcionCentrado(
+                                destacado = opcionDestacada == OpcionCentrada.MIC,
+                                icono = Icons.Default.Mic,
+                                descripcion = "Nota de voz",
+                                desplazamientoX = (-76).dp,
+                                desplazamientoY = (-56).dp,
+                                onClick = onAnexarMicrofono
+                            )
+                            BotonOpcionCentrado(
+                                destacado = opcionDestacada == OpcionCentrada.CAMARA,
+                                icono = Icons.Default.CameraAlt,
+                                descripcion = "Cámara",
+                                desplazamientoX = 0.dp,
+                                desplazamientoY = (-88).dp,
+                                onClick = onAnexarCamara
+                            )
+                            BotonOpcionCentrado(
+                                destacado = opcionDestacada == OpcionCentrada.TECLADO,
+                                icono = Icons.Default.Keyboard,
+                                descripcion = "Nota de texto",
+                                desplazamientoX = 76.dp,
+                                desplazamientoY = (-56).dp,
+                                onClick = onAnexarTeclado
+                            )
+
+                            FloatingActionButton(
+                                onClick = { menuActivo = false },
+                                shape = CircleShape,
+                                containerColor = MaterialTheme.colorScheme.secondary,
+                                contentColor = Color.White,
+                                modifier = Modifier
+                                    .align(Alignment.Center)
+                                    .size(48.dp)
+                            ) {
+                                Icon(Icons.Default.Close, contentDescription = "Cerrar")
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         if (suceso.adjuntos.isNotEmpty()) {
-            // En un suceso de la derecha, la línea y los adjuntos quedan a la derecha
+            // Estilo simplificado con espacio superior para despegar la línea del borde del elemento
             val modificadorCadena = if (derecha) {
                 Modifier
                     .fillMaxWidth()
-                    .padding(end = 14.dp)
+                    .padding(end = 12.dp)
                     .drawBehind {
+                        val espacioSuperior = 6.dp.toPx()
                         drawLine(
                             color = colorLinea,
-                            start = Offset(size.width, 0f),
+                            start = Offset(size.width, espacioSuperior),
                             end = Offset(size.width, size.height),
                             strokeWidth = 2.dp.toPx()
                         )
                     }
-                    .padding(end = 16.dp)
+                    .padding(end = 12.dp)
             } else {
                 Modifier
-                    .padding(start = 14.dp)
+                    .padding(start = 12.dp)
                     .drawBehind {
+                        val espacioSuperior = 6.dp.toPx()
                         drawLine(
                             color = colorLinea,
-                            start = Offset(0f, 0f),
+                            start = Offset(0f, espacioSuperior),
                             end = Offset(0f, size.height),
                             strokeWidth = 2.dp.toPx()
                         )
                     }
-                    .padding(start = 16.dp)
+                    .padding(start = 12.dp)
             }
 
             Column(
@@ -224,28 +393,51 @@ fun SucesoCard(
                     EntryCard(
                         entrada = adjunto,
                         modifier = Modifier
-                            .padding(top = 12.dp)
-                            .drawBehind {
-                                // Punto y tramo que conectan el adjunto con la línea
-                                val centroX = if (derecha) size.width + 16.dp.toPx() else (-16).dp.toPx()
-                                val bordeX = if (derecha) size.width else 0f
-                                drawCircle(
-                                    color = colorLinea,
-                                    radius = 5.dp.toPx(),
-                                    center = Offset(centroX, 9.dp.toPx())
-                                )
-                                drawLine(
-                                    color = colorLinea,
-                                    start = Offset(centroX, 9.dp.toPx()),
-                                    end = Offset(bordeX, 9.dp.toPx()),
-                                    strokeWidth = 2.dp.toPx()
-                                )
-                            }
+                            .padding(top = 8.dp)
                             .fillMaxWidth(0.75f)
-                            .clickable(onClick = onClick)
                     )
                 }
             }
+        }
+    }
+}
+
+@Composable
+private fun BoxScope.BotonOpcionCentrado(
+    destacado: Boolean,
+    icono: ImageVector,
+    descripcion: String,
+    desplazamientoX: Dp = 0.dp,
+    desplazamientoY: Dp = 0.dp,
+    onClick: () -> Unit
+) {
+    val escala by animateFloatAsState(
+        targetValue = if (destacado) 1.25f else 1f,
+        animationSpec = spring(stiffness = Spring.StiffnessMediumLow),
+        label = "EscalaCentrado"
+    )
+    val color = if (destacado) MaterialTheme.colorScheme.tertiary else MaterialTheme.colorScheme.primary
+
+    androidx.compose.animation.AnimatedVisibility(
+        visible = true,
+        enter = scaleIn(animationSpec = tween(150, easing = FastOutSlowInEasing)) + fadeIn(animationSpec = tween(150)),
+        exit = scaleOut(animationSpec = tween(150, easing = FastOutSlowInEasing)) + fadeOut(animationSpec = tween(150))
+    ) {
+        FloatingActionButton(
+            onClick = onClick,
+            shape = CircleShape,
+            containerColor = color,
+            contentColor = Color.White,
+            modifier = Modifier
+                .align(Alignment.Center)
+                .offset(x = desplazamientoX, y = desplazamientoY)
+                .graphicsLayer {
+                    scaleX = escala
+                    scaleY = escala
+                }
+                .size(44.dp)
+        ) {
+            Icon(icono, contentDescription = descripcion)
         }
     }
 }
@@ -256,7 +448,29 @@ fun EntryCard(entrada: Entry, modifier: Modifier = Modifier) {
         entrada.rutaFoto == null && entrada.texto == null && entrada.rutaAudio == null
 
     Column(modifier) {
-        Text(entrada.hora, style = MaterialTheme.typography.labelSmall)
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(entrada.hora, style = MaterialTheme.typography.labelSmall)
+            entrada.ubicacionFormateada?.let { gps ->
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Icon(
+                        imageVector = Icons.Default.Place,
+                        contentDescription = "Ubicación GPS",
+                        tint = MaterialTheme.colorScheme.primary,
+                        modifier = Modifier.size(12.dp)
+                    )
+                    Spacer(Modifier.width(2.dp))
+                    Text(
+                        text = gps,
+                        style = MaterialTheme.typography.labelSmall,
+                        color = MaterialTheme.colorScheme.primary
+                    )
+                }
+            }
+        }
         if (entrada.rutaFoto != null || sinContenido) {
             Spacer(Modifier.height(4.dp))
             FotoEntrada(entrada.rutaFoto)
@@ -332,7 +546,7 @@ private fun cargarMiniatura(ruta: String): ImageBitmap? {
         .asImageBitmap()
 }
 
-/** Reemplaza al botón flotante mientras se graba una nota de voz. */
+/** Reemplaza al botón flotante mientras se graba una nota de voz, con animación de ondas. */
 @Composable
 fun BarraGrabacion(
     segundos: Int,
@@ -340,6 +554,23 @@ fun BarraGrabacion(
     onCancelar: () -> Unit,
     modifier: Modifier = Modifier
 ) {
+    val transicionInfinita = rememberInfiniteTransition(label = "OndasAudioTransition")
+    val h1 by transicionInfinita.animateFloat(
+        initialValue = 0.3f, targetValue = 1f,
+        animationSpec = infiniteRepeatable(tween(350, easing = LinearEasing), RepeatMode.Reverse),
+        label = "h1"
+    )
+    val h2 by transicionInfinita.animateFloat(
+        initialValue = 1f, targetValue = 0.2f,
+        animationSpec = infiniteRepeatable(tween(450, easing = LinearEasing), RepeatMode.Reverse),
+        label = "h2"
+    )
+    val h3 by transicionInfinita.animateFloat(
+        initialValue = 0.4f, targetValue = 0.9f,
+        animationSpec = infiniteRepeatable(tween(300, easing = LinearEasing), RepeatMode.Reverse),
+        label = "h3"
+    )
+
     Row(
         modifier = modifier
             .clip(RoundedCornerShape(40.dp))
@@ -351,12 +582,18 @@ fun BarraGrabacion(
         IconButton(onClick = onCancelar) {
             Icon(Icons.Default.Close, contentDescription = "Cancelar grabación")
         }
-        Box(
-            modifier = Modifier
-                .size(12.dp)
-                .clip(CircleShape)
-                .background(MaterialTheme.colorScheme.tertiary)
-        )
+
+        Row(
+            modifier = Modifier.height(20.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(3.dp)
+        ) {
+            Box(Modifier.width(4.dp).height((20 * h1).dp).clip(CircleShape).background(MaterialTheme.colorScheme.tertiary))
+            Box(Modifier.width(4.dp).height((20 * h2).dp).clip(CircleShape).background(MaterialTheme.colorScheme.tertiary))
+            Box(Modifier.width(4.dp).height((20 * h3).dp).clip(CircleShape).background(MaterialTheme.colorScheme.tertiary))
+            Box(Modifier.width(4.dp).height((20 * h1).dp).clip(CircleShape).background(MaterialTheme.colorScheme.tertiary))
+        }
+
         Text(
             text = "%02d:%02d".format(segundos / 60, segundos % 60),
             style = MaterialTheme.typography.bodyMedium
@@ -378,10 +615,12 @@ fun BarraGrabacion(
 fun FolderScreenPreview() {
     Grupo_5_biosurTheme {
         FolderScreen(
-            nombre = "Nombre de carpeta",
+            nombre = "Obra BioSur - Fase 1",
             fecha = "Jueves 22 de octubre de 2026",
             sucesos = sucesosDeEjemplo,
-            onSucesoClick = {},
+            onAnexarCamara = {},
+            onAnexarMicrofono = {},
+            onAnexarTeclado = {},
             onRenombrar = {},
             onHistorial = {},
             grabando = false,
