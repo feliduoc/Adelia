@@ -1,0 +1,486 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/nico/Notes/Clases/AplicacionesMoviles/project/Adelia-adelia/app/src/main/AndroidManifest.xml:2:1-36:12
+INJECTED from /home/nico/Notes/Clases/AplicacionesMoviles/project/Adelia-adelia/app/src/main/AndroidManifest.xml:2:1-36:12
+INJECTED from /home/nico/Notes/Clases/AplicacionesMoviles/project/Adelia-adelia/app/src/main/AndroidManifest.xml:2:1-36:12
+INJECTED from /home/nico/Notes/Clases/AplicacionesMoviles/project/Adelia-adelia/app/src/main/AndroidManifest.xml:2:1-36:12
+MERGED from [androidx.compose.material:material-icons-extended-android:1.7.8] /home/nico/.gradle/caches/9.5.0/transforms/849573141d655ae07af1267085dbed29/transformed/material-icons-extended-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material:material-icons-core-android:1.7.8] /home/nico/.gradle/caches/9.5.0/transforms/65c9c4a11c12700428909bfd8f025a19/transformed/material-icons-core-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material3:material3-android:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/b373b17f5c8b4a703c0e86a5808418ab/transformed/material3/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.material:material-android:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/8957608554b626ccd754615e20bd584f/transformed/material/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material:material-ripple-android:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/86adda93eab659a766a9f5e8bb174e63/transformed/material-ripple/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.foundation:foundation-android:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/48c54076df3ba7801ecaa4d730b64bb7/transformed/foundation/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.animation:animation-android:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/dd9d4a4f082d4cbefd41d746c52c5640/transformed/animation/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/01839059f2f95af984e1b73a19266338/transformed/foundation-layout/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.animation:animation-core-android:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/1e114732c224d226a3d09786f6d1c250/transformed/animation-core/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-tooling-data-android:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/ca336d4626c562f8240b14d910b4a5c3/transformed/ui-tooling-data/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-unit-android:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/e540bd4e31fd39c805dd5ef4c9cd3092/transformed/ui-unit/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-geometry-android:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/f5f635b7e2bc8ae15fe7683024362e8c/transformed/ui-geometry/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-util-android:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/0de2b8e2d28d50d806b3ba040668c8fc/transformed/ui-util/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-text-android:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/bcfe42956af5e448189526a8e7f31964/transformed/ui-text/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/25c3d9bae5b0cb37e414132e83f3a6fc/transformed/ui-tooling-preview/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.ui:ui-tooling-android:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/f690a6a3699a1cabacb471f4fbbdb72d/transformed/ui-tooling/AndroidManifest.xml:17:1-28:12
+MERGED from [androidx.compose.ui:ui-graphics-android:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/53637b269f8bb31ef3fdb65452c0f5ca/transformed/ui-graphics/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.navigationevent:navigationevent-android:1.0.0] /home/nico/.gradle/caches/9.5.0/transforms/9914b13d7030d7d7400220259aeb0454/transformed/navigationevent/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.navigationevent:navigationevent-compose-android:1.0.0] /home/nico/.gradle/caches/9.5.0/transforms/77bd14fd1468031041764e49a261cadb/transformed/navigationevent-compose/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.camera:camera-video:1.4.2] /home/nico/.gradle/caches/9.5.0/transforms/e28b82aed1bbe557819137d0355d7169/transformed/camera-video-1.4.2/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.camera:camera-view:1.4.2] /home/nico/.gradle/caches/9.5.0/transforms/dc1e935b02a144e9075c5d3603be0982/transformed/camera-view-1.4.2/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.camera:camera-lifecycle:1.4.2] /home/nico/.gradle/caches/9.5.0/transforms/7f1bc7c1ea124fb844641c81b4eb61fb/transformed/camera-lifecycle-1.4.2/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.camera:camera-camera2:1.4.2] /home/nico/.gradle/caches/9.5.0/transforms/761aeda3ebfbf2d713ce75a7e7cf4a99/transformed/camera-camera2-1.4.2/AndroidManifest.xml:17:1-36:12
+MERGED from [androidx.camera:camera-core:1.4.2] /home/nico/.gradle/caches/9.5.0/transforms/39cd33961550c7a06f9867766a1548d0/transformed/camera-core-1.4.2/AndroidManifest.xml:17:1-36:12
+MERGED from [androidx.activity:activity-ktx:1.13.0] /home/nico/.gradle/caches/9.5.0/transforms/7bb843c67f4a1e1f4775ac4f270ada37/transformed/activity-ktx-1.13.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /home/nico/.gradle/caches/9.5.0/transforms/cfa7e4c9ede5fcf61bd73d5e051505bc/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.appcompat:appcompat:1.1.0] /home/nico/.gradle/caches/9.5.0/transforms/27055f6ba7c1df9c053d96e5f50b6c08/transformed/appcompat-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment:1.1.0] /home/nico/.gradle/caches/9.5.0/transforms/38e114a29f650acf477cbda09cf73912/transformed/fragment-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.transition:transition:1.6.0] /home/nico/.gradle/caches/9.5.0/transforms/0dabdc01f28dd80bac7f498c0a877365/transformed/transition-1.6.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /home/nico/.gradle/caches/9.5.0/transforms/a0282698fe5f253184c46c144acb4c07/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/nico/.gradle/caches/9.5.0/transforms/e7564f424e7c4193301c5bd3f7f5bfb5/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /home/nico/.gradle/caches/9.5.0/transforms/a981dff2937f538b14099fa8f90b76f5/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.emoji2:emoji2:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/acdc96960cac9e17416346aecd31eae3/transformed/emoji2-1.4.0/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.11.0] /home/nico/.gradle/caches/9.5.0/transforms/dc2f23be925a391d9626f4e02afac1ff/transformed/lifecycle-process-2.11.0/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.11.0] /home/nico/.gradle/caches/9.5.0/transforms/19d562ee515f2124c6c5caa048a927e8/transformed/lifecycle-viewmodel-2.11.0/AndroidManifest.xml:2:1-5:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.11.0] /home/nico/.gradle/caches/9.5.0/transforms/99468211fd842054ba6f455995b85046/transformed/lifecycle-viewmodel/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.11.0] /home/nico/.gradle/caches/9.5.0/transforms/c5b70b3e20a27b5f9c1ed4c2eeb7f503/transformed/lifecycle-livedata-core-ktx-2.11.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.runtime:runtime-retain-android:1.11.0] /home/nico/.gradle/caches/9.5.0/transforms/5794a4f03eb3dc8edd01b24d68b63732/transformed/runtime-retain/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.runtime:runtime-annotation-android:1.11.0] /home/nico/.gradle/caches/9.5.0/transforms/d3075f90b42597ead9a315289ffe496d/transformed/runtime-annotation/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.runtime:runtime-android:1.11.0] /home/nico/.gradle/caches/9.5.0/transforms/5271e18f4aec52bf97fd7c10401f9cfe/transformed/runtime/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.11.0] /home/nico/.gradle/caches/9.5.0/transforms/50049598ffd58ddc7f1cb359e1ad2749/transformed/runtime-saveable/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.savedstate:savedstate-compose-android:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/84ebe53f8b9eab08ca41d83448ccc40a/transformed/savedstate-compose/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.savedstate:savedstate-ktx:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/870abd2730e2e2f169b8039c2c75c4a1/transformed/savedstate-ktx-1.4.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.savedstate:savedstate-android:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/55baad922ae27e192f69fcd0dbd57ad0/transformed/savedstate/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate-android:2.11.0] /home/nico/.gradle/caches/9.5.0/transforms/43ab49e2fcce6dffd799aa614b9e029b/transformed/lifecycle-viewmodel-savedstate/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core-ktx:1.19.0] /home/nico/.gradle/caches/9.5.0/transforms/dc4d6d9f105ce71f2293220db32ea673/transformed/core-ktx-1.19.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /home/nico/.gradle/caches/9.5.0/transforms/0b79eb40d78ca39dc4ea623632483867/transformed/appcompat-resources-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/nico/.gradle/caches/9.5.0/transforms/a13837971d19f33dbab18bbb66466159/transformed/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.autofill:autofill:1.0.0] /home/nico/.gradle/caches/9.5.0/transforms/7e9f19b77aaae994ee7cc35f56f445c1/transformed/autofill-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.window:window-core-android:1.5.0] /home/nico/.gradle/caches/9.5.0/transforms/1c903494f07198a7a9fea440bbc1b914/transformed/window-core/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.window:window:1.5.0] /home/nico/.gradle/caches/9.5.0/transforms/6619a135799715a16f01b3262a0d1970/transformed/window-1.5.0/AndroidManifest.xml:17:1-31:12
+MERGED from [androidx.graphics:graphics-path:1.0.1] /home/nico/.gradle/caches/9.5.0/transforms/897eaa4e8ab898042c4645a7a156a11f/transformed/graphics-path-1.0.1/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/nico/.gradle/caches/9.5.0/transforms/2767f55c9abb42685e61ed069473f671/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/nico/.gradle/caches/9.5.0/transforms/0323f17db8ce45cad625273a9ecd9b53/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/nico/.gradle/caches/9.5.0/transforms/fd164c878a3deb64298911fad5a7541b/transformed/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.0.0] /home/nico/.gradle/caches/9.5.0/transforms/92bcdfc74a4c5de015edc4bfc5e64ce4/transformed/customview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.19.0] /home/nico/.gradle/caches/9.5.0/transforms/b6a500c218429205e85bb807a4424e42/transformed/core-1.19.0/AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.11.0] /home/nico/.gradle/caches/9.5.0/transforms/e95ad2852d3bd0001c7154489c071d3d/transformed/lifecycle-runtime/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.11.0] /home/nico/.gradle/caches/9.5.0/transforms/65cdc6c63aaf2e214a23d98850300cba/transformed/lifecycle-viewmodel-ktx-2.11.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.11.0] /home/nico/.gradle/caches/9.5.0/transforms/9b04be2ceb3e274b0efe71e5ab365cf2/transformed/lifecycle-livedata-core-2.11.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.11.0] /home/nico/.gradle/caches/9.5.0/transforms/d50eca5eaae19615c76f40d657e48402/transformed/lifecycle-livedata-2.11.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.11.0] /home/nico/.gradle/caches/9.5.0/transforms/8c59be64e7c45f848e731c9f2a85894a/transformed/lifecycle-runtime-ktx/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-compose-android:2.11.0] /home/nico/.gradle/caches/9.5.0/transforms/a1230062d0933d3cfc0f8564399e0466/transformed/lifecycle-runtime-compose/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-android:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/61bde329c2f9470ffaaec5b7f50e443e/transformed/ui/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-test-manifest:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/96267992c1c58dd797499685b9bc2d6a/transformed/ui-test-manifest-1.10.4/AndroidManifest.xml:17:1-29:12
+MERGED from [androidx.activity:activity:1.13.0] /home/nico/.gradle/caches/9.5.0/transforms/41649133aec3f809c1a4057b149d24e0/transformed/activity-1.13.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity-compose:1.13.0] /home/nico/.gradle/caches/9.5.0/transforms/cfc57d08ce846286f53b13cd6852dac2/transformed/activity-compose-1.13.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.annotation:annotation-experimental:1.4.1] /home/nico/.gradle/caches/9.5.0/transforms/2ae538f0b7469c61096b9d2da95ef340/transformed/annotation-experimental-1.4.1/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/00c991778d0e4d3bc33f47cdf8870aeb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:17:1-55:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/nico/.gradle/caches/9.5.0/transforms/ea97b4456f9f912ed65b011585f0ade4/transformed/startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.2.0] /home/nico/.gradle/caches/9.5.0/transforms/e0ace01378e7ca3dd21334407af35a22/transformed/tracing-1.2.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.tracing:tracing-ktx:1.2.0] /home/nico/.gradle/caches/9.5.0/transforms/4eb5b072b5f7aa4d61fa9a441f1b615f/transformed/tracing-ktx-1.2.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core-viewtree:1.0.0] /home/nico/.gradle/caches/9.5.0/transforms/4d655e543da0f2478d254305c7bff49f/transformed/core-viewtree-1.0.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.exifinterface:exifinterface:1.3.2] /home/nico/.gradle/caches/9.5.0/transforms/fa0d940c455e950652a05c07da7e3fab/transformed/exifinterface-1.3.2/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/nico/.gradle/caches/9.5.0/transforms/a252c04f46748f9703e6fbe0fde3cc8f/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/nico/.gradle/caches/9.5.0/transforms/9f2109d9d62e801fc23cccee28982f65/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/nico/.gradle/caches/9.5.0/transforms/e3a8cbb610fa36389df8f7d927d90370/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/nico/.gradle/caches/9.5.0/transforms/c2009a112a3b5296c3ec58a701687fb8/transformed/core-runtime-2.2.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/nico/.gradle/caches/9.5.0/transforms/590918304ca7758a48256486524c05fe/transformed/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/nico/.gradle/caches/9.5.0/transforms/a1d23b5feac54f021a6f141bbe2405a9/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /home/nico/.gradle/caches/9.5.0/transforms/b5513dc192beebaa7e91f37399f94ad5/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
+	package
+		INJECTED from /home/nico/Notes/Clases/AplicacionesMoviles/project/Adelia-adelia/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/nico/Notes/Clases/AplicacionesMoviles/project/Adelia-adelia/app/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /home/nico/Notes/Clases/AplicacionesMoviles/project/Adelia-adelia/app/src/main/AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from /home/nico/Notes/Clases/AplicacionesMoviles/project/Adelia-adelia/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/nico/Notes/Clases/AplicacionesMoviles/project/Adelia-adelia/app/src/main/AndroidManifest.xml:2:11-69
+uses-feature#android.hardware.camera
+ADDED from /home/nico/Notes/Clases/AplicacionesMoviles/project/Adelia-adelia/app/src/main/AndroidManifest.xml:5:5-7:36
+	android:required
+		ADDED from /home/nico/Notes/Clases/AplicacionesMoviles/project/Adelia-adelia/app/src/main/AndroidManifest.xml:7:9-33
+	android:name
+		ADDED from /home/nico/Notes/Clases/AplicacionesMoviles/project/Adelia-adelia/app/src/main/AndroidManifest.xml:6:9-47
+uses-permission#android.permission.CAMERA
+ADDED from /home/nico/Notes/Clases/AplicacionesMoviles/project/Adelia-adelia/app/src/main/AndroidManifest.xml:9:5-65
+	android:name
+		ADDED from /home/nico/Notes/Clases/AplicacionesMoviles/project/Adelia-adelia/app/src/main/AndroidManifest.xml:9:22-62
+uses-permission#android.permission.RECORD_AUDIO
+ADDED from /home/nico/Notes/Clases/AplicacionesMoviles/project/Adelia-adelia/app/src/main/AndroidManifest.xml:10:5-71
+	android:name
+		ADDED from /home/nico/Notes/Clases/AplicacionesMoviles/project/Adelia-adelia/app/src/main/AndroidManifest.xml:10:22-68
+application
+ADDED from /home/nico/Notes/Clases/AplicacionesMoviles/project/Adelia-adelia/app/src/main/AndroidManifest.xml:12:5-34:19
+INJECTED from /home/nico/Notes/Clases/AplicacionesMoviles/project/Adelia-adelia/app/src/main/AndroidManifest.xml:12:5-34:19
+MERGED from [androidx.compose.ui:ui-tooling-android:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/f690a6a3699a1cabacb471f4fbbdb72d/transformed/ui-tooling/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.compose.ui:ui-tooling-android:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/f690a6a3699a1cabacb471f4fbbdb72d/transformed/ui-tooling/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.camera:camera-camera2:1.4.2] /home/nico/.gradle/caches/9.5.0/transforms/761aeda3ebfbf2d713ce75a7e7cf4a99/transformed/camera-camera2-1.4.2/AndroidManifest.xml:23:5-34:19
+MERGED from [androidx.camera:camera-camera2:1.4.2] /home/nico/.gradle/caches/9.5.0/transforms/761aeda3ebfbf2d713ce75a7e7cf4a99/transformed/camera-camera2-1.4.2/AndroidManifest.xml:23:5-34:19
+MERGED from [androidx.camera:camera-core:1.4.2] /home/nico/.gradle/caches/9.5.0/transforms/39cd33961550c7a06f9867766a1548d0/transformed/camera-core-1.4.2/AndroidManifest.xml:23:5-34:19
+MERGED from [androidx.camera:camera-core:1.4.2] /home/nico/.gradle/caches/9.5.0/transforms/39cd33961550c7a06f9867766a1548d0/transformed/camera-core-1.4.2/AndroidManifest.xml:23:5-34:19
+MERGED from [androidx.emoji2:emoji2:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/acdc96960cac9e17416346aecd31eae3/transformed/emoji2-1.4.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.emoji2:emoji2:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/acdc96960cac9e17416346aecd31eae3/transformed/emoji2-1.4.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.11.0] /home/nico/.gradle/caches/9.5.0/transforms/dc2f23be925a391d9626f4e02afac1ff/transformed/lifecycle-process-2.11.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.11.0] /home/nico/.gradle/caches/9.5.0/transforms/dc2f23be925a391d9626f4e02afac1ff/transformed/lifecycle-process-2.11.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.window:window:1.5.0] /home/nico/.gradle/caches/9.5.0/transforms/6619a135799715a16f01b3262a0d1970/transformed/window-1.5.0/AndroidManifest.xml:22:5-29:19
+MERGED from [androidx.window:window:1.5.0] /home/nico/.gradle/caches/9.5.0/transforms/6619a135799715a16f01b3262a0d1970/transformed/window-1.5.0/AndroidManifest.xml:22:5-29:19
+MERGED from [androidx.core:core:1.19.0] /home/nico/.gradle/caches/9.5.0/transforms/b6a500c218429205e85bb807a4424e42/transformed/core-1.19.0/AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.19.0] /home/nico/.gradle/caches/9.5.0/transforms/b6a500c218429205e85bb807a4424e42/transformed/core-1.19.0/AndroidManifest.xml:28:5-89
+MERGED from [androidx.compose.ui:ui-test-manifest:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/96267992c1c58dd797499685b9bc2d6a/transformed/ui-test-manifest-1.10.4/AndroidManifest.xml:22:5-27:19
+MERGED from [androidx.compose.ui:ui-test-manifest:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/96267992c1c58dd797499685b9bc2d6a/transformed/ui-test-manifest-1.10.4/AndroidManifest.xml:22:5-27:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/00c991778d0e4d3bc33f47cdf8870aeb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/00c991778d0e4d3bc33f47cdf8870aeb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/nico/.gradle/caches/9.5.0/transforms/ea97b4456f9f912ed65b011585f0ade4/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/nico/.gradle/caches/9.5.0/transforms/ea97b4456f9f912ed65b011585f0ade4/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/nico/.gradle/caches/9.5.0/transforms/e3a8cbb610fa36389df8f7d927d90370/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/nico/.gradle/caches/9.5.0/transforms/e3a8cbb610fa36389df8f7d927d90370/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+	android:extractNativeLibs
+		INJECTED from /home/nico/Notes/Clases/AplicacionesMoviles/project/Adelia-adelia/app/src/main/AndroidManifest.xml
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.19.0] /home/nico/.gradle/caches/9.5.0/transforms/b6a500c218429205e85bb807a4424e42/transformed/core-1.19.0/AndroidManifest.xml:28:18-86
+	android:supportsRtl
+		ADDED from /home/nico/Notes/Clases/AplicacionesMoviles/project/Adelia-adelia/app/src/main/AndroidManifest.xml:19:9-35
+	android:label
+		ADDED from /home/nico/Notes/Clases/AplicacionesMoviles/project/Adelia-adelia/app/src/main/AndroidManifest.xml:17:9-41
+	android:fullBackupContent
+		ADDED from /home/nico/Notes/Clases/AplicacionesMoviles/project/Adelia-adelia/app/src/main/AndroidManifest.xml:15:9-54
+	android:roundIcon
+		ADDED from /home/nico/Notes/Clases/AplicacionesMoviles/project/Adelia-adelia/app/src/main/AndroidManifest.xml:18:9-54
+	android:icon
+		ADDED from /home/nico/Notes/Clases/AplicacionesMoviles/project/Adelia-adelia/app/src/main/AndroidManifest.xml:16:9-43
+	android:allowBackup
+		ADDED from /home/nico/Notes/Clases/AplicacionesMoviles/project/Adelia-adelia/app/src/main/AndroidManifest.xml:13:9-35
+	android:theme
+		ADDED from /home/nico/Notes/Clases/AplicacionesMoviles/project/Adelia-adelia/app/src/main/AndroidManifest.xml:20:9-52
+	android:dataExtractionRules
+		ADDED from /home/nico/Notes/Clases/AplicacionesMoviles/project/Adelia-adelia/app/src/main/AndroidManifest.xml:14:9-65
+activity#com.example.grupo_5_biosur.MainActivity
+ADDED from /home/nico/Notes/Clases/AplicacionesMoviles/project/Adelia-adelia/app/src/main/AndroidManifest.xml:21:9-33:20
+	android:screenOrientation
+		ADDED from /home/nico/Notes/Clases/AplicacionesMoviles/project/Adelia-adelia/app/src/main/AndroidManifest.xml:24:13-49
+	android:label
+		ADDED from /home/nico/Notes/Clases/AplicacionesMoviles/project/Adelia-adelia/app/src/main/AndroidManifest.xml:25:13-45
+	android:windowSoftInputMode
+		ADDED from /home/nico/Notes/Clases/AplicacionesMoviles/project/Adelia-adelia/app/src/main/AndroidManifest.xml:27:13-55
+	android:exported
+		ADDED from /home/nico/Notes/Clases/AplicacionesMoviles/project/Adelia-adelia/app/src/main/AndroidManifest.xml:23:13-36
+	android:theme
+		ADDED from /home/nico/Notes/Clases/AplicacionesMoviles/project/Adelia-adelia/app/src/main/AndroidManifest.xml:26:13-56
+	android:name
+		ADDED from /home/nico/Notes/Clases/AplicacionesMoviles/project/Adelia-adelia/app/src/main/AndroidManifest.xml:22:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /home/nico/Notes/Clases/AplicacionesMoviles/project/Adelia-adelia/app/src/main/AndroidManifest.xml:28:13-32:29
+action#android.intent.action.MAIN
+ADDED from /home/nico/Notes/Clases/AplicacionesMoviles/project/Adelia-adelia/app/src/main/AndroidManifest.xml:29:17-69
+	android:name
+		ADDED from /home/nico/Notes/Clases/AplicacionesMoviles/project/Adelia-adelia/app/src/main/AndroidManifest.xml:29:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/nico/Notes/Clases/AplicacionesMoviles/project/Adelia-adelia/app/src/main/AndroidManifest.xml:31:17-77
+	android:name
+		ADDED from /home/nico/Notes/Clases/AplicacionesMoviles/project/Adelia-adelia/app/src/main/AndroidManifest.xml:31:27-74
+uses-sdk
+INJECTED from /home/nico/Notes/Clases/AplicacionesMoviles/project/Adelia-adelia/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/nico/Notes/Clases/AplicacionesMoviles/project/Adelia-adelia/app/src/main/AndroidManifest.xml
+INJECTED from /home/nico/Notes/Clases/AplicacionesMoviles/project/Adelia-adelia/app/src/main/AndroidManifest.xml
+MERGED from [androidx.compose.material:material-icons-extended-android:1.7.8] /home/nico/.gradle/caches/9.5.0/transforms/849573141d655ae07af1267085dbed29/transformed/material-icons-extended-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-extended-android:1.7.8] /home/nico/.gradle/caches/9.5.0/transforms/849573141d655ae07af1267085dbed29/transformed/material-icons-extended-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-core-android:1.7.8] /home/nico/.gradle/caches/9.5.0/transforms/65c9c4a11c12700428909bfd8f025a19/transformed/material-icons-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-core-android:1.7.8] /home/nico/.gradle/caches/9.5.0/transforms/65c9c4a11c12700428909bfd8f025a19/transformed/material-icons-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material3:material3-android:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/b373b17f5c8b4a703c0e86a5808418ab/transformed/material3/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.material3:material3-android:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/b373b17f5c8b4a703c0e86a5808418ab/transformed/material3/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.material:material-android:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/8957608554b626ccd754615e20bd584f/transformed/material/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-android:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/8957608554b626ccd754615e20bd584f/transformed/material/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-ripple-android:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/86adda93eab659a766a9f5e8bb174e63/transformed/material-ripple/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-ripple-android:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/86adda93eab659a766a9f5e8bb174e63/transformed/material-ripple/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-android:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/48c54076df3ba7801ecaa4d730b64bb7/transformed/foundation/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-android:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/48c54076df3ba7801ecaa4d730b64bb7/transformed/foundation/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-android:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/dd9d4a4f082d4cbefd41d746c52c5640/transformed/animation/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-android:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/dd9d4a4f082d4cbefd41d746c52c5640/transformed/animation/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/01839059f2f95af984e1b73a19266338/transformed/foundation-layout/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/01839059f2f95af984e1b73a19266338/transformed/foundation-layout/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-core-android:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/1e114732c224d226a3d09786f6d1c250/transformed/animation-core/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-core-android:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/1e114732c224d226a3d09786f6d1c250/transformed/animation-core/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-tooling-data-android:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/ca336d4626c562f8240b14d910b4a5c3/transformed/ui-tooling-data/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-tooling-data-android:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/ca336d4626c562f8240b14d910b4a5c3/transformed/ui-tooling-data/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-unit-android:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/e540bd4e31fd39c805dd5ef4c9cd3092/transformed/ui-unit/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-unit-android:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/e540bd4e31fd39c805dd5ef4c9cd3092/transformed/ui-unit/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-geometry-android:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/f5f635b7e2bc8ae15fe7683024362e8c/transformed/ui-geometry/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-geometry-android:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/f5f635b7e2bc8ae15fe7683024362e8c/transformed/ui-geometry/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-util-android:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/0de2b8e2d28d50d806b3ba040668c8fc/transformed/ui-util/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-util-android:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/0de2b8e2d28d50d806b3ba040668c8fc/transformed/ui-util/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-text-android:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/bcfe42956af5e448189526a8e7f31964/transformed/ui-text/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-text-android:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/bcfe42956af5e448189526a8e7f31964/transformed/ui-text/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/25c3d9bae5b0cb37e414132e83f3a6fc/transformed/ui-tooling-preview/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/25c3d9bae5b0cb37e414132e83f3a6fc/transformed/ui-tooling-preview/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling-android:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/f690a6a3699a1cabacb471f4fbbdb72d/transformed/ui-tooling/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling-android:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/f690a6a3699a1cabacb471f4fbbdb72d/transformed/ui-tooling/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-graphics-android:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/53637b269f8bb31ef3fdb65452c0f5ca/transformed/ui-graphics/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-graphics-android:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/53637b269f8bb31ef3fdb65452c0f5ca/transformed/ui-graphics/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigationevent:navigationevent-android:1.0.0] /home/nico/.gradle/caches/9.5.0/transforms/9914b13d7030d7d7400220259aeb0454/transformed/navigationevent/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigationevent:navigationevent-android:1.0.0] /home/nico/.gradle/caches/9.5.0/transforms/9914b13d7030d7d7400220259aeb0454/transformed/navigationevent/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigationevent:navigationevent-compose-android:1.0.0] /home/nico/.gradle/caches/9.5.0/transforms/77bd14fd1468031041764e49a261cadb/transformed/navigationevent-compose/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigationevent:navigationevent-compose-android:1.0.0] /home/nico/.gradle/caches/9.5.0/transforms/77bd14fd1468031041764e49a261cadb/transformed/navigationevent-compose/AndroidManifest.xml:5:5-44
+MERGED from [androidx.camera:camera-video:1.4.2] /home/nico/.gradle/caches/9.5.0/transforms/e28b82aed1bbe557819137d0355d7169/transformed/camera-video-1.4.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.camera:camera-video:1.4.2] /home/nico/.gradle/caches/9.5.0/transforms/e28b82aed1bbe557819137d0355d7169/transformed/camera-video-1.4.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.camera:camera-view:1.4.2] /home/nico/.gradle/caches/9.5.0/transforms/dc1e935b02a144e9075c5d3603be0982/transformed/camera-view-1.4.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.camera:camera-view:1.4.2] /home/nico/.gradle/caches/9.5.0/transforms/dc1e935b02a144e9075c5d3603be0982/transformed/camera-view-1.4.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.camera:camera-lifecycle:1.4.2] /home/nico/.gradle/caches/9.5.0/transforms/7f1bc7c1ea124fb844641c81b4eb61fb/transformed/camera-lifecycle-1.4.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.camera:camera-lifecycle:1.4.2] /home/nico/.gradle/caches/9.5.0/transforms/7f1bc7c1ea124fb844641c81b4eb61fb/transformed/camera-lifecycle-1.4.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.camera:camera-camera2:1.4.2] /home/nico/.gradle/caches/9.5.0/transforms/761aeda3ebfbf2d713ce75a7e7cf4a99/transformed/camera-camera2-1.4.2/AndroidManifest.xml:21:5-44
+MERGED from [androidx.camera:camera-camera2:1.4.2] /home/nico/.gradle/caches/9.5.0/transforms/761aeda3ebfbf2d713ce75a7e7cf4a99/transformed/camera-camera2-1.4.2/AndroidManifest.xml:21:5-44
+MERGED from [androidx.camera:camera-core:1.4.2] /home/nico/.gradle/caches/9.5.0/transforms/39cd33961550c7a06f9867766a1548d0/transformed/camera-core-1.4.2/AndroidManifest.xml:21:5-44
+MERGED from [androidx.camera:camera-core:1.4.2] /home/nico/.gradle/caches/9.5.0/transforms/39cd33961550c7a06f9867766a1548d0/transformed/camera-core-1.4.2/AndroidManifest.xml:21:5-44
+MERGED from [androidx.activity:activity-ktx:1.13.0] /home/nico/.gradle/caches/9.5.0/transforms/7bb843c67f4a1e1f4775ac4f270ada37/transformed/activity-ktx-1.13.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-ktx:1.13.0] /home/nico/.gradle/caches/9.5.0/transforms/7bb843c67f4a1e1f4775ac4f270ada37/transformed/activity-ktx-1.13.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /home/nico/.gradle/caches/9.5.0/transforms/cfa7e4c9ede5fcf61bd73d5e051505bc/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /home/nico/.gradle/caches/9.5.0/transforms/cfa7e4c9ede5fcf61bd73d5e051505bc/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.appcompat:appcompat:1.1.0] /home/nico/.gradle/caches/9.5.0/transforms/27055f6ba7c1df9c053d96e5f50b6c08/transformed/appcompat-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.1.0] /home/nico/.gradle/caches/9.5.0/transforms/27055f6ba7c1df9c053d96e5f50b6c08/transformed/appcompat-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] /home/nico/.gradle/caches/9.5.0/transforms/38e114a29f650acf477cbda09cf73912/transformed/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] /home/nico/.gradle/caches/9.5.0/transforms/38e114a29f650acf477cbda09cf73912/transformed/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.6.0] /home/nico/.gradle/caches/9.5.0/transforms/0dabdc01f28dd80bac7f498c0a877365/transformed/transition-1.6.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.transition:transition:1.6.0] /home/nico/.gradle/caches/9.5.0/transforms/0dabdc01f28dd80bac7f498c0a877365/transformed/transition-1.6.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /home/nico/.gradle/caches/9.5.0/transforms/a0282698fe5f253184c46c144acb4c07/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /home/nico/.gradle/caches/9.5.0/transforms/a0282698fe5f253184c46c144acb4c07/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/nico/.gradle/caches/9.5.0/transforms/e7564f424e7c4193301c5bd3f7f5bfb5/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/nico/.gradle/caches/9.5.0/transforms/e7564f424e7c4193301c5bd3f7f5bfb5/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/nico/.gradle/caches/9.5.0/transforms/a981dff2937f538b14099fa8f90b76f5/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/nico/.gradle/caches/9.5.0/transforms/a981dff2937f538b14099fa8f90b76f5/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.emoji2:emoji2:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/acdc96960cac9e17416346aecd31eae3/transformed/emoji2-1.4.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.emoji2:emoji2:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/acdc96960cac9e17416346aecd31eae3/transformed/emoji2-1.4.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.11.0] /home/nico/.gradle/caches/9.5.0/transforms/dc2f23be925a391d9626f4e02afac1ff/transformed/lifecycle-process-2.11.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.11.0] /home/nico/.gradle/caches/9.5.0/transforms/dc2f23be925a391d9626f4e02afac1ff/transformed/lifecycle-process-2.11.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.11.0] /home/nico/.gradle/caches/9.5.0/transforms/19d562ee515f2124c6c5caa048a927e8/transformed/lifecycle-viewmodel-2.11.0/AndroidManifest.xml:4:5-43
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.11.0] /home/nico/.gradle/caches/9.5.0/transforms/19d562ee515f2124c6c5caa048a927e8/transformed/lifecycle-viewmodel-2.11.0/AndroidManifest.xml:4:5-43
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.11.0] /home/nico/.gradle/caches/9.5.0/transforms/99468211fd842054ba6f455995b85046/transformed/lifecycle-viewmodel/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.11.0] /home/nico/.gradle/caches/9.5.0/transforms/99468211fd842054ba6f455995b85046/transformed/lifecycle-viewmodel/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.11.0] /home/nico/.gradle/caches/9.5.0/transforms/c5b70b3e20a27b5f9c1ed4c2eeb7f503/transformed/lifecycle-livedata-core-ktx-2.11.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.11.0] /home/nico/.gradle/caches/9.5.0/transforms/c5b70b3e20a27b5f9c1ed4c2eeb7f503/transformed/lifecycle-livedata-core-ktx-2.11.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-retain-android:1.11.0] /home/nico/.gradle/caches/9.5.0/transforms/5794a4f03eb3dc8edd01b24d68b63732/transformed/runtime-retain/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-retain-android:1.11.0] /home/nico/.gradle/caches/9.5.0/transforms/5794a4f03eb3dc8edd01b24d68b63732/transformed/runtime-retain/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-annotation-android:1.11.0] /home/nico/.gradle/caches/9.5.0/transforms/d3075f90b42597ead9a315289ffe496d/transformed/runtime-annotation/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-annotation-android:1.11.0] /home/nico/.gradle/caches/9.5.0/transforms/d3075f90b42597ead9a315289ffe496d/transformed/runtime-annotation/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-android:1.11.0] /home/nico/.gradle/caches/9.5.0/transforms/5271e18f4aec52bf97fd7c10401f9cfe/transformed/runtime/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-android:1.11.0] /home/nico/.gradle/caches/9.5.0/transforms/5271e18f4aec52bf97fd7c10401f9cfe/transformed/runtime/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.11.0] /home/nico/.gradle/caches/9.5.0/transforms/50049598ffd58ddc7f1cb359e1ad2749/transformed/runtime-saveable/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.11.0] /home/nico/.gradle/caches/9.5.0/transforms/50049598ffd58ddc7f1cb359e1ad2749/transformed/runtime-saveable/AndroidManifest.xml:5:5-44
+MERGED from [androidx.savedstate:savedstate-compose-android:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/84ebe53f8b9eab08ca41d83448ccc40a/transformed/savedstate-compose/AndroidManifest.xml:5:5-44
+MERGED from [androidx.savedstate:savedstate-compose-android:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/84ebe53f8b9eab08ca41d83448ccc40a/transformed/savedstate-compose/AndroidManifest.xml:5:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/870abd2730e2e2f169b8039c2c75c4a1/transformed/savedstate-ktx-1.4.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/870abd2730e2e2f169b8039c2c75c4a1/transformed/savedstate-ktx-1.4.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.savedstate:savedstate-android:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/55baad922ae27e192f69fcd0dbd57ad0/transformed/savedstate/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-android:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/55baad922ae27e192f69fcd0dbd57ad0/transformed/savedstate/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate-android:2.11.0] /home/nico/.gradle/caches/9.5.0/transforms/43ab49e2fcce6dffd799aa614b9e029b/transformed/lifecycle-viewmodel-savedstate/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate-android:2.11.0] /home/nico/.gradle/caches/9.5.0/transforms/43ab49e2fcce6dffd799aa614b9e029b/transformed/lifecycle-viewmodel-savedstate/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core-ktx:1.19.0] /home/nico/.gradle/caches/9.5.0/transforms/dc4d6d9f105ce71f2293220db32ea673/transformed/core-ktx-1.19.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.19.0] /home/nico/.gradle/caches/9.5.0/transforms/dc4d6d9f105ce71f2293220db32ea673/transformed/core-ktx-1.19.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /home/nico/.gradle/caches/9.5.0/transforms/0b79eb40d78ca39dc4ea623632483867/transformed/appcompat-resources-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /home/nico/.gradle/caches/9.5.0/transforms/0b79eb40d78ca39dc4ea623632483867/transformed/appcompat-resources-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/nico/.gradle/caches/9.5.0/transforms/a13837971d19f33dbab18bbb66466159/transformed/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/nico/.gradle/caches/9.5.0/transforms/a13837971d19f33dbab18bbb66466159/transformed/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.autofill:autofill:1.0.0] /home/nico/.gradle/caches/9.5.0/transforms/7e9f19b77aaae994ee7cc35f56f445c1/transformed/autofill-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.autofill:autofill:1.0.0] /home/nico/.gradle/caches/9.5.0/transforms/7e9f19b77aaae994ee7cc35f56f445c1/transformed/autofill-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.window:window-core-android:1.5.0] /home/nico/.gradle/caches/9.5.0/transforms/1c903494f07198a7a9fea440bbc1b914/transformed/window-core/AndroidManifest.xml:5:5-44
+MERGED from [androidx.window:window-core-android:1.5.0] /home/nico/.gradle/caches/9.5.0/transforms/1c903494f07198a7a9fea440bbc1b914/transformed/window-core/AndroidManifest.xml:5:5-44
+MERGED from [androidx.window:window:1.5.0] /home/nico/.gradle/caches/9.5.0/transforms/6619a135799715a16f01b3262a0d1970/transformed/window-1.5.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.window:window:1.5.0] /home/nico/.gradle/caches/9.5.0/transforms/6619a135799715a16f01b3262a0d1970/transformed/window-1.5.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.graphics:graphics-path:1.0.1] /home/nico/.gradle/caches/9.5.0/transforms/897eaa4e8ab898042c4645a7a156a11f/transformed/graphics-path-1.0.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.graphics:graphics-path:1.0.1] /home/nico/.gradle/caches/9.5.0/transforms/897eaa4e8ab898042c4645a7a156a11f/transformed/graphics-path-1.0.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/nico/.gradle/caches/9.5.0/transforms/2767f55c9abb42685e61ed069473f671/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/nico/.gradle/caches/9.5.0/transforms/2767f55c9abb42685e61ed069473f671/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/nico/.gradle/caches/9.5.0/transforms/0323f17db8ce45cad625273a9ecd9b53/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/nico/.gradle/caches/9.5.0/transforms/0323f17db8ce45cad625273a9ecd9b53/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/nico/.gradle/caches/9.5.0/transforms/fd164c878a3deb64298911fad5a7541b/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/nico/.gradle/caches/9.5.0/transforms/fd164c878a3deb64298911fad5a7541b/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.0.0] /home/nico/.gradle/caches/9.5.0/transforms/92bcdfc74a4c5de015edc4bfc5e64ce4/transformed/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /home/nico/.gradle/caches/9.5.0/transforms/92bcdfc74a4c5de015edc4bfc5e64ce4/transformed/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.19.0] /home/nico/.gradle/caches/9.5.0/transforms/b6a500c218429205e85bb807a4424e42/transformed/core-1.19.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.19.0] /home/nico/.gradle/caches/9.5.0/transforms/b6a500c218429205e85bb807a4424e42/transformed/core-1.19.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.11.0] /home/nico/.gradle/caches/9.5.0/transforms/e95ad2852d3bd0001c7154489c071d3d/transformed/lifecycle-runtime/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.11.0] /home/nico/.gradle/caches/9.5.0/transforms/e95ad2852d3bd0001c7154489c071d3d/transformed/lifecycle-runtime/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.11.0] /home/nico/.gradle/caches/9.5.0/transforms/65cdc6c63aaf2e214a23d98850300cba/transformed/lifecycle-viewmodel-ktx-2.11.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.11.0] /home/nico/.gradle/caches/9.5.0/transforms/65cdc6c63aaf2e214a23d98850300cba/transformed/lifecycle-viewmodel-ktx-2.11.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.11.0] /home/nico/.gradle/caches/9.5.0/transforms/9b04be2ceb3e274b0efe71e5ab365cf2/transformed/lifecycle-livedata-core-2.11.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.11.0] /home/nico/.gradle/caches/9.5.0/transforms/9b04be2ceb3e274b0efe71e5ab365cf2/transformed/lifecycle-livedata-core-2.11.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.11.0] /home/nico/.gradle/caches/9.5.0/transforms/d50eca5eaae19615c76f40d657e48402/transformed/lifecycle-livedata-2.11.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.11.0] /home/nico/.gradle/caches/9.5.0/transforms/d50eca5eaae19615c76f40d657e48402/transformed/lifecycle-livedata-2.11.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.11.0] /home/nico/.gradle/caches/9.5.0/transforms/8c59be64e7c45f848e731c9f2a85894a/transformed/lifecycle-runtime-ktx/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.11.0] /home/nico/.gradle/caches/9.5.0/transforms/8c59be64e7c45f848e731c9f2a85894a/transformed/lifecycle-runtime-ktx/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-compose-android:2.11.0] /home/nico/.gradle/caches/9.5.0/transforms/a1230062d0933d3cfc0f8564399e0466/transformed/lifecycle-runtime-compose/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-compose-android:2.11.0] /home/nico/.gradle/caches/9.5.0/transforms/a1230062d0933d3cfc0f8564399e0466/transformed/lifecycle-runtime-compose/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-android:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/61bde329c2f9470ffaaec5b7f50e443e/transformed/ui/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-android:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/61bde329c2f9470ffaaec5b7f50e443e/transformed/ui/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-test-manifest:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/96267992c1c58dd797499685b9bc2d6a/transformed/ui-test-manifest-1.10.4/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-test-manifest:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/96267992c1c58dd797499685b9bc2d6a/transformed/ui-test-manifest-1.10.4/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.13.0] /home/nico/.gradle/caches/9.5.0/transforms/41649133aec3f809c1a4057b149d24e0/transformed/activity-1.13.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.13.0] /home/nico/.gradle/caches/9.5.0/transforms/41649133aec3f809c1a4057b149d24e0/transformed/activity-1.13.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity-compose:1.13.0] /home/nico/.gradle/caches/9.5.0/transforms/cfc57d08ce846286f53b13cd6852dac2/transformed/activity-compose-1.13.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-compose:1.13.0] /home/nico/.gradle/caches/9.5.0/transforms/cfc57d08ce846286f53b13cd6852dac2/transformed/activity-compose-1.13.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.1] /home/nico/.gradle/caches/9.5.0/transforms/2ae538f0b7469c61096b9d2da95ef340/transformed/annotation-experimental-1.4.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.1] /home/nico/.gradle/caches/9.5.0/transforms/2ae538f0b7469c61096b9d2da95ef340/transformed/annotation-experimental-1.4.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/00c991778d0e4d3bc33f47cdf8870aeb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/00c991778d0e4d3bc33f47cdf8870aeb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/nico/.gradle/caches/9.5.0/transforms/ea97b4456f9f912ed65b011585f0ade4/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/nico/.gradle/caches/9.5.0/transforms/ea97b4456f9f912ed65b011585f0ade4/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.2.0] /home/nico/.gradle/caches/9.5.0/transforms/e0ace01378e7ca3dd21334407af35a22/transformed/tracing-1.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.tracing:tracing:1.2.0] /home/nico/.gradle/caches/9.5.0/transforms/e0ace01378e7ca3dd21334407af35a22/transformed/tracing-1.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.tracing:tracing-ktx:1.2.0] /home/nico/.gradle/caches/9.5.0/transforms/4eb5b072b5f7aa4d61fa9a441f1b615f/transformed/tracing-ktx-1.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.tracing:tracing-ktx:1.2.0] /home/nico/.gradle/caches/9.5.0/transforms/4eb5b072b5f7aa4d61fa9a441f1b615f/transformed/tracing-ktx-1.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core-viewtree:1.0.0] /home/nico/.gradle/caches/9.5.0/transforms/4d655e543da0f2478d254305c7bff49f/transformed/core-viewtree-1.0.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-viewtree:1.0.0] /home/nico/.gradle/caches/9.5.0/transforms/4d655e543da0f2478d254305c7bff49f/transformed/core-viewtree-1.0.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.exifinterface:exifinterface:1.3.2] /home/nico/.gradle/caches/9.5.0/transforms/fa0d940c455e950652a05c07da7e3fab/transformed/exifinterface-1.3.2/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.2] /home/nico/.gradle/caches/9.5.0/transforms/fa0d940c455e950652a05c07da7e3fab/transformed/exifinterface-1.3.2/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/nico/.gradle/caches/9.5.0/transforms/a252c04f46748f9703e6fbe0fde3cc8f/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/nico/.gradle/caches/9.5.0/transforms/a252c04f46748f9703e6fbe0fde3cc8f/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/nico/.gradle/caches/9.5.0/transforms/9f2109d9d62e801fc23cccee28982f65/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/nico/.gradle/caches/9.5.0/transforms/9f2109d9d62e801fc23cccee28982f65/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/nico/.gradle/caches/9.5.0/transforms/e3a8cbb610fa36389df8f7d927d90370/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/nico/.gradle/caches/9.5.0/transforms/e3a8cbb610fa36389df8f7d927d90370/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/nico/.gradle/caches/9.5.0/transforms/c2009a112a3b5296c3ec58a701687fb8/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/nico/.gradle/caches/9.5.0/transforms/c2009a112a3b5296c3ec58a701687fb8/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/nico/.gradle/caches/9.5.0/transforms/590918304ca7758a48256486524c05fe/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/nico/.gradle/caches/9.5.0/transforms/590918304ca7758a48256486524c05fe/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/nico/.gradle/caches/9.5.0/transforms/a1d23b5feac54f021a6f141bbe2405a9/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/nico/.gradle/caches/9.5.0/transforms/a1d23b5feac54f021a6f141bbe2405a9/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/nico/.gradle/caches/9.5.0/transforms/b5513dc192beebaa7e91f37399f94ad5/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/nico/.gradle/caches/9.5.0/transforms/b5513dc192beebaa7e91f37399f94ad5/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+	android:targetSdkVersion
+		INJECTED from /home/nico/Notes/Clases/AplicacionesMoviles/project/Adelia-adelia/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/nico/Notes/Clases/AplicacionesMoviles/project/Adelia-adelia/app/src/main/AndroidManifest.xml
+activity#androidx.compose.ui.tooling.PreviewActivity
+ADDED from [androidx.compose.ui:ui-tooling-android:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/f690a6a3699a1cabacb471f4fbbdb72d/transformed/ui-tooling/AndroidManifest.xml:23:9-25:39
+	android:exported
+		ADDED from [androidx.compose.ui:ui-tooling-android:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/f690a6a3699a1cabacb471f4fbbdb72d/transformed/ui-tooling/AndroidManifest.xml:25:13-36
+	android:name
+		ADDED from [androidx.compose.ui:ui-tooling-android:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/f690a6a3699a1cabacb471f4fbbdb72d/transformed/ui-tooling/AndroidManifest.xml:24:13-71
+service#androidx.camera.core.impl.MetadataHolderService
+ADDED from [androidx.camera:camera-camera2:1.4.2] /home/nico/.gradle/caches/9.5.0/transforms/761aeda3ebfbf2d713ce75a7e7cf4a99/transformed/camera-camera2-1.4.2/AndroidManifest.xml:24:9-33:19
+MERGED from [androidx.camera:camera-core:1.4.2] /home/nico/.gradle/caches/9.5.0/transforms/39cd33961550c7a06f9867766a1548d0/transformed/camera-core-1.4.2/AndroidManifest.xml:29:9-33:78
+MERGED from [androidx.camera:camera-core:1.4.2] /home/nico/.gradle/caches/9.5.0/transforms/39cd33961550c7a06f9867766a1548d0/transformed/camera-core-1.4.2/AndroidManifest.xml:29:9-33:78
+	tools:node
+		ADDED from [androidx.camera:camera-camera2:1.4.2] /home/nico/.gradle/caches/9.5.0/transforms/761aeda3ebfbf2d713ce75a7e7cf4a99/transformed/camera-camera2-1.4.2/AndroidManifest.xml:29:13-31
+	android:enabled
+		ADDED from [androidx.camera:camera-camera2:1.4.2] /home/nico/.gradle/caches/9.5.0/transforms/761aeda3ebfbf2d713ce75a7e7cf4a99/transformed/camera-camera2-1.4.2/AndroidManifest.xml:26:13-36
+	android:exported
+		ADDED from [androidx.camera:camera-camera2:1.4.2] /home/nico/.gradle/caches/9.5.0/transforms/761aeda3ebfbf2d713ce75a7e7cf4a99/transformed/camera-camera2-1.4.2/AndroidManifest.xml:27:13-37
+	tools:ignore
+		ADDED from [androidx.camera:camera-camera2:1.4.2] /home/nico/.gradle/caches/9.5.0/transforms/761aeda3ebfbf2d713ce75a7e7cf4a99/transformed/camera-camera2-1.4.2/AndroidManifest.xml:28:13-75
+	android:name
+		ADDED from [androidx.camera:camera-camera2:1.4.2] /home/nico/.gradle/caches/9.5.0/transforms/761aeda3ebfbf2d713ce75a7e7cf4a99/transformed/camera-camera2-1.4.2/AndroidManifest.xml:25:13-75
+meta-data#androidx.camera.core.impl.MetadataHolderService.DEFAULT_CONFIG_PROVIDER
+ADDED from [androidx.camera:camera-camera2:1.4.2] /home/nico/.gradle/caches/9.5.0/transforms/761aeda3ebfbf2d713ce75a7e7cf4a99/transformed/camera-camera2-1.4.2/AndroidManifest.xml:30:13-32:89
+	android:value
+		ADDED from [androidx.camera:camera-camera2:1.4.2] /home/nico/.gradle/caches/9.5.0/transforms/761aeda3ebfbf2d713ce75a7e7cf4a99/transformed/camera-camera2-1.4.2/AndroidManifest.xml:32:17-86
+	android:name
+		ADDED from [androidx.camera:camera-camera2:1.4.2] /home/nico/.gradle/caches/9.5.0/transforms/761aeda3ebfbf2d713ce75a7e7cf4a99/transformed/camera-camera2-1.4.2/AndroidManifest.xml:31:17-103
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.emoji2:emoji2:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/acdc96960cac9e17416346aecd31eae3/transformed/emoji2-1.4.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.11.0] /home/nico/.gradle/caches/9.5.0/transforms/dc2f23be925a391d9626f4e02afac1ff/transformed/lifecycle-process-2.11.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.11.0] /home/nico/.gradle/caches/9.5.0/transforms/dc2f23be925a391d9626f4e02afac1ff/transformed/lifecycle-process-2.11.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/00c991778d0e4d3bc33f47cdf8870aeb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/00c991778d0e4d3bc33f47cdf8870aeb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/nico/.gradle/caches/9.5.0/transforms/ea97b4456f9f912ed65b011585f0ade4/transformed/startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/nico/.gradle/caches/9.5.0/transforms/ea97b4456f9f912ed65b011585f0ade4/transformed/startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.emoji2:emoji2:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/acdc96960cac9e17416346aecd31eae3/transformed/emoji2-1.4.0/AndroidManifest.xml:28:13-31
+	android:authorities
+		ADDED from [androidx.emoji2:emoji2:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/acdc96960cac9e17416346aecd31eae3/transformed/emoji2-1.4.0/AndroidManifest.xml:26:13-68
+	android:exported
+		ADDED from [androidx.emoji2:emoji2:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/acdc96960cac9e17416346aecd31eae3/transformed/emoji2-1.4.0/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/acdc96960cac9e17416346aecd31eae3/transformed/emoji2-1.4.0/AndroidManifest.xml:25:13-67
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [androidx.emoji2:emoji2:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/acdc96960cac9e17416346aecd31eae3/transformed/emoji2-1.4.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.emoji2:emoji2:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/acdc96960cac9e17416346aecd31eae3/transformed/emoji2-1.4.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/acdc96960cac9e17416346aecd31eae3/transformed/emoji2-1.4.0/AndroidManifest.xml:30:17-75
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.11.0] /home/nico/.gradle/caches/9.5.0/transforms/dc2f23be925a391d9626f4e02afac1ff/transformed/lifecycle-process-2.11.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.11.0] /home/nico/.gradle/caches/9.5.0/transforms/dc2f23be925a391d9626f4e02afac1ff/transformed/lifecycle-process-2.11.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.11.0] /home/nico/.gradle/caches/9.5.0/transforms/dc2f23be925a391d9626f4e02afac1ff/transformed/lifecycle-process-2.11.0/AndroidManifest.xml:30:17-78
+uses-library#androidx.window.extensions
+ADDED from [androidx.window:window:1.5.0] /home/nico/.gradle/caches/9.5.0/transforms/6619a135799715a16f01b3262a0d1970/transformed/window-1.5.0/AndroidManifest.xml:23:9-25:40
+	android:required
+		ADDED from [androidx.window:window:1.5.0] /home/nico/.gradle/caches/9.5.0/transforms/6619a135799715a16f01b3262a0d1970/transformed/window-1.5.0/AndroidManifest.xml:25:13-37
+	android:name
+		ADDED from [androidx.window:window:1.5.0] /home/nico/.gradle/caches/9.5.0/transforms/6619a135799715a16f01b3262a0d1970/transformed/window-1.5.0/AndroidManifest.xml:24:13-54
+uses-library#androidx.window.sidecar
+ADDED from [androidx.window:window:1.5.0] /home/nico/.gradle/caches/9.5.0/transforms/6619a135799715a16f01b3262a0d1970/transformed/window-1.5.0/AndroidManifest.xml:26:9-28:40
+	android:required
+		ADDED from [androidx.window:window:1.5.0] /home/nico/.gradle/caches/9.5.0/transforms/6619a135799715a16f01b3262a0d1970/transformed/window-1.5.0/AndroidManifest.xml:28:13-37
+	android:name
+		ADDED from [androidx.window:window:1.5.0] /home/nico/.gradle/caches/9.5.0/transforms/6619a135799715a16f01b3262a0d1970/transformed/window-1.5.0/AndroidManifest.xml:27:13-51
+permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.19.0] /home/nico/.gradle/caches/9.5.0/transforms/b6a500c218429205e85bb807a4424e42/transformed/core-1.19.0/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.19.0] /home/nico/.gradle/caches/9.5.0/transforms/b6a500c218429205e85bb807a4424e42/transformed/core-1.19.0/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.19.0] /home/nico/.gradle/caches/9.5.0/transforms/b6a500c218429205e85bb807a4424e42/transformed/core-1.19.0/AndroidManifest.xml:23:9-81
+permission#com.example.grupo_5_biosur.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.19.0] /home/nico/.gradle/caches/9.5.0/transforms/b6a500c218429205e85bb807a4424e42/transformed/core-1.19.0/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.19.0] /home/nico/.gradle/caches/9.5.0/transforms/b6a500c218429205e85bb807a4424e42/transformed/core-1.19.0/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.19.0] /home/nico/.gradle/caches/9.5.0/transforms/b6a500c218429205e85bb807a4424e42/transformed/core-1.19.0/AndroidManifest.xml:23:9-81
+uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.19.0] /home/nico/.gradle/caches/9.5.0/transforms/b6a500c218429205e85bb807a4424e42/transformed/core-1.19.0/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.19.0] /home/nico/.gradle/caches/9.5.0/transforms/b6a500c218429205e85bb807a4424e42/transformed/core-1.19.0/AndroidManifest.xml:26:22-94
+uses-permission#com.example.grupo_5_biosur.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.19.0] /home/nico/.gradle/caches/9.5.0/transforms/b6a500c218429205e85bb807a4424e42/transformed/core-1.19.0/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.19.0] /home/nico/.gradle/caches/9.5.0/transforms/b6a500c218429205e85bb807a4424e42/transformed/core-1.19.0/AndroidManifest.xml:26:22-94
+activity#androidx.activity.ComponentActivity
+ADDED from [androidx.compose.ui:ui-test-manifest:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/96267992c1c58dd797499685b9bc2d6a/transformed/ui-test-manifest-1.10.4/AndroidManifest.xml:23:9-26:79
+	android:exported
+		ADDED from [androidx.compose.ui:ui-test-manifest:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/96267992c1c58dd797499685b9bc2d6a/transformed/ui-test-manifest-1.10.4/AndroidManifest.xml:25:13-36
+	android:theme
+		ADDED from [androidx.compose.ui:ui-test-manifest:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/96267992c1c58dd797499685b9bc2d6a/transformed/ui-test-manifest-1.10.4/AndroidManifest.xml:26:13-76
+	android:name
+		ADDED from [androidx.compose.ui:ui-test-manifest:1.10.4] /home/nico/.gradle/caches/9.5.0/transforms/96267992c1c58dd797499685b9bc2d6a/transformed/ui-test-manifest-1.10.4/AndroidManifest.xml:24:13-63
+meta-data#androidx.profileinstaller.ProfileInstallerInitializer
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/00c991778d0e4d3bc33f47cdf8870aeb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/00c991778d0e4d3bc33f47cdf8870aeb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/00c991778d0e4d3bc33f47cdf8870aeb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:30:17-85
+receiver#androidx.profileinstaller.ProfileInstallReceiver
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/00c991778d0e4d3bc33f47cdf8870aeb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:34:9-52:20
+	android:enabled
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/00c991778d0e4d3bc33f47cdf8870aeb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/00c991778d0e4d3bc33f47cdf8870aeb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:38:13-36
+	android:permission
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/00c991778d0e4d3bc33f47cdf8870aeb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:39:13-57
+	android:directBootAware
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/00c991778d0e4d3bc33f47cdf8870aeb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:36:13-44
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/00c991778d0e4d3bc33f47cdf8870aeb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:35:13-76
+intent-filter#action:name:androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/00c991778d0e4d3bc33f47cdf8870aeb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:40:13-42:29
+action#androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/00c991778d0e4d3bc33f47cdf8870aeb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:41:17-91
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/00c991778d0e4d3bc33f47cdf8870aeb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:41:25-88
+intent-filter#action:name:androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/00c991778d0e4d3bc33f47cdf8870aeb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:43:13-45:29
+action#androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/00c991778d0e4d3bc33f47cdf8870aeb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:44:17-85
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/00c991778d0e4d3bc33f47cdf8870aeb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:44:25-82
+intent-filter#action:name:androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/00c991778d0e4d3bc33f47cdf8870aeb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:46:13-48:29
+action#androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/00c991778d0e4d3bc33f47cdf8870aeb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:47:17-88
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/00c991778d0e4d3bc33f47cdf8870aeb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:47:25-85
+intent-filter#action:name:androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/00c991778d0e4d3bc33f47cdf8870aeb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:49:13-51:29
+action#androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/00c991778d0e4d3bc33f47cdf8870aeb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:50:17-95
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/nico/.gradle/caches/9.5.0/transforms/00c991778d0e4d3bc33f47cdf8870aeb/transformed/profileinstaller-1.4.0/AndroidManifest.xml:50:25-92
