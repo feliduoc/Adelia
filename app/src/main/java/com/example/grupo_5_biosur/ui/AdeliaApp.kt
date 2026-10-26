@@ -271,42 +271,6 @@ fun AdeliaApp(carpetaInicialId: Long) {
         )
     }
 
-    // Menú para adjuntar algo a un suceso
-    sucesoElegido?.let { id ->
-        AlertDialog(
-            onDismissRequest = { sucesoElegido = null },
-            title = { Text("Adjuntar a este suceso") },
-            text = {
-                Column {
-                    Text(
-                        "Lo que agregues quedará conectado a esta entrada.",
-                        style = MaterialTheme.typography.bodyMedium
-                    )
-                    Spacer(Modifier.height(12.dp))
-                    OpcionAdjuntar(Icons.Default.CameraAlt, "Agregar foto") {
-                        destino = id
-                        sucesoElegido = null
-                        abrirCamara()
-                    }
-                    OpcionAdjuntar(Icons.Default.Mic, "Agregar nota de voz") {
-                        destino = id
-                        sucesoElegido = null
-                        abrirMicrofono()
-                    }
-                    OpcionAdjuntar(Icons.Default.Keyboard, "Agregar nota de texto") {
-                        destino = id
-                        sucesoElegido = null
-                        mostrarNota = true
-                    }
-                }
-            },
-            confirmButton = {},
-            dismissButton = {
-                TextButton(onClick = { sucesoElegido = null }) { Text("Cancelar") }
-            }
-        )
-    }
-
     // Cuadro para escribir una nota de texto
     if (mostrarNota) {
         AlertDialog(
@@ -335,21 +299,5 @@ fun AdeliaApp(carpetaInicialId: Long) {
                 TextButton(onClick = { cerrarNota() }) { Text("Cancelar") }
             }
         )
-    }
-}
-
-@Composable
-private fun OpcionAdjuntar(icono: ImageVector, texto: String, onClick: () -> Unit) {
-    Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .clip(RoundedCornerShape(12.dp))
-            .clickable(onClick = onClick)
-            .padding(vertical = 12.dp, horizontal = 8.dp),
-        verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = androidx.compose.foundation.layout.Arrangement.spacedBy(12.dp)
-    ) {
-        Icon(icono, contentDescription = null, tint = MaterialTheme.colorScheme.primary)
-        Text(texto, style = MaterialTheme.typography.bodyMedium)
     }
 }
