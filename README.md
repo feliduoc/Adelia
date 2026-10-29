@@ -3,10 +3,6 @@
 # [Adelia 🐧]
 
 
-
-> Stack: [Lenguaje] · [Arquitectura] · [BD] · [Librerías principales]
-> Mínimo: [Android Versión (API X)] · Target: [Android Versión (API Y)]
-
 ---
 
 [![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white)](https://kotlinlang.org/)
