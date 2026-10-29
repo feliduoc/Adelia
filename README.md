@@ -2,7 +2,7 @@
 
 # [Adelia 🐧]
 
-[Descripción breve de la aplicación y su propósito principal]
+
 
 > Stack: [Lenguaje] · [Arquitectura] · [BD] · [Librerías principales]
 > Mínimo: [Android Versión (API X)] · Target: [Android Versión (API Y)]
@@ -14,15 +14,3 @@
 [![Gradle](https://img.shields.io/badge/Gradle-02303A?style=for-the-badge&logo=gradle&logoColor=white)](https://gradle.org/)
 
 </div>
-
----
-
-## Stack Tecnológico
-
-* **Lenguaje:** [Kotlin / Java / Flutter / etc.]
-* **IDE:** [Android Studio / VS Code]
-* **Sistema de Construcción:** [Gradle / Maven / etc.]
-
----
-
-## Esquema de base de datos ([json/ SQLite])
