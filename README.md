@@ -8,3 +8,20 @@
 [![Gradle](https://img.shields.io/badge/Gradle-02303A?style=for-the-badge&logo=gradle&logoColor=white)](https://gradle.org/)
 
 </div>
+
+
+## equipo de desarrollo
+
+<div align="center">
+<table>
+<tr>
+<td align="center">
+<a href="https://github.com/feliduoc">
+<img src="https://github.com/feliduoc.png" width="100" style="border-radius:50%"><br>
+<strong> Felipe Cea </strong><br>
+</a>
+</td>
+<td align="center">
+<a href="https://github.com/nicchavez-duocuc">
+<img src="https://github.com/hanamii14.png" width="100" style="border-radius:50%"><br>
+<strong>Nicolas Chávez</strong><br>
